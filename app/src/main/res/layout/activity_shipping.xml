@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Presentation.ui.activities.impl.ShippingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="#fff"
+        android:layout_alignParentTop="true"
+        android:text="aloch"
+        app:titleTextColor="#1E1A1A"
+        android:id="@+id/toolbar"/>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_shipping_addresses"
+        android:layout_below="@id/toolbar"
+        android:background="#C1FAFBFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/payment"
+        android:overScrollMode="never"
+        />
+
+
+
+    <Button
+        android:id="@+id/payment"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_color"
+        android:textColor="#2E2C2C"
+        android:text="PROCEED TO PAYMENT"
+        android:textStyle="bold" />
+
+</RelativeLayout>

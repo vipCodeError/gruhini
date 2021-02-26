@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#424242</color>
+    <color name="colorPrimaryDark">#404040</color>
+
+    <color name="colorPrimaryLight">#fc8a1a</color>
+    <color name="colorAccent">#111111</color>
+
+    <color name="colorSuccess">#28a745</color>
+    <color name="colorWarning">#ffc107</color>
+    <color name="colorDanger">#dc3545</color>
+    <color name="colorInfo">#17a2b8</color>
+    <color name="card_title">#EEE1E1E1</color>
+    <color name="card_back_color">#474747</color>
+    <color name="product_card_back_color">#B8B8B8</color>
+    <color name="cat_card_round_color">#9ACFD8FF</color>
+</resources>

@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryDark">#2C2C2C</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="cookieTitleColor">@color/default_title_color</item>
+        <item name="cookieMessageColor">@color/default_message_color</item>
+        <item name="cookieActionColor">@color/default_action_color</item>
+        <item name="cookieBackgroundColor">@color/default_bg_color</item>
+        <item name="cookiePadding">24dp</item>
+        <item name="cookieTitleSize">24sp</item>
+        <item name="cookieMessageSize">16sp</item>
+        <item name="cookieActionSize">18sp</item>
+    </style>
+
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#B3B3B3</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="MyCustomRadioButton" parent="@android:style/TextAppearance">
+        <item name="android:paddingStart" tools:ignore="NewApi">6dp</item>
+        <item name="android:paddingEnd" tools:ignore="NewApi">6dp</item>
+        <item name="android:textColor">@drawable/selectable_text_color_checked_state</item>
+        <item name="android:background">@drawable/selectable_text_bg_color_checked_state</item>
+    </style>
+
+    <style name="ColorRadioButton" parent="@android:style/TextAppearance">
+        <item name="android:background">@drawable/selectable_background_shape_checked_state</item>
+    </style>
+
+</resources>

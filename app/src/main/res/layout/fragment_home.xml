@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground">
+
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:overScrollMode="never">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+<!--            <com.airbnb.lottie.LottieAnimationView-->
+<!--                android:id="@+id/animationView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="120dp"-->
+<!--                app:lottie_rawRes="@raw/loading"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="350dp"-->
+<!--                android:elevation="12dp"-->
+<!--                app:lottie_autoPlay="true"-->
+<!--                app:lottie_loop="true"/>-->
+
+            <RelativeLayout
+                android:id="@+id/search_lay"
+                android:layout_alignParentTop="true"
+                android:background="#F6F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_shape"
+                    android:text="Search your product ..."
+                    android:textAlignment="center"
+                     android:paddingTop="8dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/mic_search"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/mic_search"
+                    android:background="@drawable/ic_action_mic"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/search_lay"
+                android:id="@+id/home_top_section"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/imageSlider"
+                    android:layout_margin="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/home_top_section">
+
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/featured_categories_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="FEATURED CATEGORIES"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/featured_categories_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/top_categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/featured_categories_text"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:id="@+id/flash_deal_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/flash_deals_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="FLASH DEAL"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+<!--                    <View-->
+<!--                        android:layout_width="75dp"-->
+<!--                        android:layout_height="3dp"-->
+<!--                        android:layout_alignBottom="@id/flash_deals_text"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        android:background="@color/colorPrimary" />-->
+
+                    <cn.iwgang.countdownview.CountdownView
+                        android:id="@+id/countdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/flash_deals_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        app:isHideTimeBackground="false"
+                        app:timeBgColor="@color/colorPrimaryLight"
+                        app:isShowDay="true"
+                        app:isShowHour="true"
+                        app:isShowMinute="true"
+                        app:isShowSecond="true"
+                        app:timeTextColor="@android:color/white"
+                        app:timeTextSize="16sp"
+                        app:isTimeTextBold="true"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/flash_deals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/flash_deals_text"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:id="@+id/todays_deal_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/todays_deals_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="TODAY'S DEAL"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/todays_deals_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/todays_deals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/todays_deals_text"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.daimajia.slider.library.SliderLayout
+                        android:id="@+id/imageSlider_2"
+                        android:layout_margin="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/featured_products_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="FEATURED PRODUCTS"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/featured_products_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/featured_products"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/featured_products_text"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Mens Wear's            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mens_wear_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="MEN'S WEAR"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/mens_wear_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mens_product_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mens_wear_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Woman Wear's            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/woman_wear_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="WOMAN'S WEAR"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/woman_wear_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/woman_product_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/woman_wear_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Beauty Wear's            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/beauty_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="BEAUTY AND SKINCARE"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/beauty_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/beauty_product_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/beauty_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Bags and Luggage            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/bag_luggage_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="BAG AND LUGGAGE"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/bag_luggage_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/bag_luggage_product_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bag_luggage_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    kitchen and home           -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/kitchen_home_appliance_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="KITCHEN AND HOME APPLIANCE"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/kitchen_home_appliance_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/kticehn_product_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/kitchen_home_appliance_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+                <!--    MOBLIE PC            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mobile_pc_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="MOBILE AND PC"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/mobile_pc_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mobile_pc_product_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mobile_pc_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Sports and fitness            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/sports_and_fitness_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="SPORTS AND FITNESS"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/sports_and_fitness_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sports_and_fitness_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sports_and_fitness_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+                <!--    Sports and fitness            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/baby_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="TOY AND BABY PRODUCT"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/baby_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/baby_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/baby_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/bannerr_4"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.daimajia.slider.library.SliderLayout
+                        android:id="@+id/imageSlider_1"
+                        android:layout_margin="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/best_selling_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="BEST SELLING"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/best_selling_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/best_selling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/best_selling_text"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@id/todays_deal_section"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/imageSlider_3"
+                    android:layout_margin="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/popular_brands_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="OUR POPULAR BRANDS"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/popular_brands_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/popular_brads"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/popular_brands_text"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/auction_product_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/auction_products_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="AUCTION PRODUCTS"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/auction_products_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/colorPrimary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/auction_products"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/auction_products_text"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+</ScrollView>

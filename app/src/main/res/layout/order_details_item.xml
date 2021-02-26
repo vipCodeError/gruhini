@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="1dp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:id="@+id/o_items_ght"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/archia"
+            android:maxLines="2"
+            android:text="Product Name"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/product_variant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginLeft="10dp"
+            android:text="Variant"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/product_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="end"
+            android:text="0"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/delivery_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_variant"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/price_history_rounded"
+            android:fontFamily="@font/ptsans_bold"
+            android:letterSpacing="0.1"
+            android:padding="4dp"
+            android:text="Pending"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_variant"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/price_history_rounded"
+            android:fontFamily="@font/ptsans_bold"
+            android:gravity="end"
+            android:letterSpacing="0.1"
+            android:padding="4dp"
+            android:text="0"
+            android:textColor="@color/colorPrimary" />
+
+
+        <LinearLayout
+            android:id="@+id/order_timeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/delivery_status"
+            android:layout_margin="8dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/rounded_card"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/timeLineRecycler"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:background="#fff"
+                android:layout_height="100dp"/>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/archia"-->
+<!--                    android:letterSpacing="0.1"-->
+<!--                    android:text="Order"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textSize="7sp"/>-->
+
+<!--                <com.github.vipulasri.timelineview.TimelineView-->
+<!--                    android:id="@+id/order_pending_timeline"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    app:endLineColor="#151414"-->
+<!--                    app:lineOrientation="horizontal"-->
+<!--                    app:linePadding="5dp"-->
+<!--                    app:lineWidth="2dp"-->
+<!--                    app:marker="@drawable/marker_green_dot"-->
+<!--                    app:markerSize="20dp"-->
+<!--                    app:startLineColor="#FFFFFF" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/archia"-->
+<!--                    android:letterSpacing="0.1"-->
+<!--                    android:text="Proccessed"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textSize="7sp" />-->
+
+<!--                <com.github.vipulasri.timelineview.TimelineView-->
+<!--                    android:id="@+id/proccessed_timeline"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    app:endLineColor="#151414"-->
+<!--                    app:lineOrientation="horizontal"-->
+<!--                    app:lineWidth="2dp"-->
+<!--                    app:marker="@drawable/marker_dot"-->
+<!--                    app:markerSize="20dp"-->
+<!--                    app:startLineColor="#151414" />-->
+
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/archia"-->
+<!--                    android:letterSpacing="0.1"-->
+<!--                    android:text="Out of Delivery"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textSize="7sp" />-->
+
+<!--                <com.github.vipulasri.timelineview.TimelineView-->
+<!--                    android:id="@+id/out_of_delivery_timeline"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    app:endLineColor="#151414"-->
+<!--                    app:lineOrientation="horizontal"-->
+<!--                    app:lineWidth="2dp"-->
+<!--                    app:marker="@drawable/marker_dot"-->
+<!--                    app:markerSize="20dp"-->
+<!--                    app:startLineColor="#151414" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/archia"-->
+<!--                    android:letterSpacing="0.1"-->
+<!--                    android:text="Delivered"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textSize="7sp" />-->
+
+<!--                <com.github.vipulasri.timelineview.TimelineView-->
+<!--                    android:id="@+id/delivered_timeline"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    app:endLineColor="#FFFFFF"-->
+<!--                    app:lineOrientation="horizontal"-->
+<!--                    app:lineWidth="2dp"-->
+<!--                    app:marker="@drawable/marker_dot"-->
+<!--                    app:markerSize="20dp"-->
+<!--                    app:startLineColor="#151414" />-->
+
+<!--            </LinearLayout>-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
