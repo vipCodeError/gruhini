@@ -20,66 +20,75 @@
             android:scaleType="centerCrop"
             android:src="@color/colorAccent" />
 
-        <TextView
-            android:id="@+id/product_name"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
+        <RelativeLayout
             android:layout_below="@id/product_image"
-            android:ellipsize="end"
-            android:fontFamily="@font/ptsans_bold"
-            android:textSize="16sp"
-            android:maxLines="2"
-            android:padding="10dp"
-            android:text="TextView" />
+            android:background="#348BC34A"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/product_discounted_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_name"
-            android:layout_marginLeft="10dp"
-            android:text="TextView"
-            android:background="@drawable/price_history_rounded"
-            android:padding="4dp"
-            android:fontFamily="@font/ptsans_regular"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/ptsans_bold"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:textColor="#252525"
+                android:text="TextView" />
 
-        <TextView
-            android:id="@+id/product_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_name"
-            android:fontFamily="@font/ptsans_regular"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/product_discounted_price"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/product_discounted_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_name"
+                android:layout_marginLeft="10dp"
+                android:text="TextView"
+                android:background="@drawable/price_history_rounded"
+                android:padding="4dp"
+                android:fontFamily="@font/ptsans_regular"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"/>
 
-        <RatingBar
-            android:id="@+id/product_rating"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_discounted_price"
-            android:clickable="false"
-            android:numStars="5"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:theme="@style/RatingBar"/>
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_name"
+                android:fontFamily="@font/ptsans_regular"
+                android:textColor="#535353"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/product_discounted_price"
+                android:text="TextView" />
 
-        <TextView
-            android:id="@+id/product_rating_count"
-            style="@style/Widget.AppCompat.TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/product_rating"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/product_rating"
-            android:text="0 sold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textSize="12sp"/>
+            <RatingBar
+                android:id="@+id/product_rating"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_discounted_price"
+                android:clickable="false"
+                android:numStars="5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:theme="@style/RatingBar"/>
+
+            <TextView
+                android:id="@+id/product_rating_count"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/product_rating"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/product_rating"
+                android:text="0 sold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
 
     </RelativeLayout>
 
