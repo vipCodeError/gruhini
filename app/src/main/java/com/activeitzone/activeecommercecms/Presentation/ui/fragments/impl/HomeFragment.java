@@ -1,7 +1,14 @@
 package com.activeitzone.activeecommercecms.Presentation.ui.fragments.impl;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -10,10 +17,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -85,10 +95,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import cn.iwgang.countdownview.CountdownView;
 
+
 public class HomeFragment extends Fragment implements CartView, HomeView, CategoryClickListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener, ProductClickListener, BrandClickListener, AuctionClickListener {
 
     private static final int RECOGNIZER_REQ_CODE = 1234;
     private static final int RECOGNIZER_CHECK_CODE = 2345;
+
     private View v;
     List<SliderImage> sliderImages;
     private SliderLayout bannerOne, bannerTwo, bannerThree, bannerFour;
@@ -101,7 +113,14 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     private RecyclerView auction_recyclerView;
     private final List<AuctionProduct> mAuctionProducts = new ArrayList<>();
     private  AuctionProductAdapter adapter;
-    private TextView flash_deals_text;
+    private TextView flash_deals_text, featured_categories_text,
+            featured_products_text, mens_wear_txt,woman_wear_txt,
+            beauty_txt, bag_luggage_txt, kitchen_home_appliance_txt,
+            mobile_pc_txt, sports_and_fitness_txt,
+            baby_txt,best_selling_text, todayDealTxt;
+
+    private ScrollView scrollContainer;
+
     private CountdownView mCvCountdownView;
     private ImageView micSearch;
     RelativeLayout searchLayout;
@@ -119,6 +138,21 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         todays_deal_section = v.findViewById(R.id.todays_deal_section);
         flash_deal_section = v.findViewById(R.id.flash_deal_section);
         flash_deals_text = v.findViewById(R.id.flash_deals_text);
+        featured_categories_text = v.findViewById(R.id.featured_categories_text);
+        featured_products_text = v.findViewById(R.id.featured_products_text);
+        mens_wear_txt = v.findViewById(R.id.mens_wear_txt);
+        woman_wear_txt = v.findViewById(R.id.woman_wear_txt);
+        beauty_txt = v.findViewById(R.id.beauty_txt);
+        bag_luggage_txt = v.findViewById(R.id.bag_luggage_txt);
+        kitchen_home_appliance_txt = v.findViewById(R.id.kitchen_home_appliance_txt);
+        mobile_pc_txt = v.findViewById(R.id.mobile_pc_txt);
+        sports_and_fitness_txt = v.findViewById(R.id.sports_and_fitness_txt);
+        baby_txt = v.findViewById(R.id.baby_txt);
+        best_selling_text = v.findViewById(R.id.best_selling_text);
+        todayDealTxt = v.findViewById(R.id.todays_deals_text);
+
+        scrollContainer = v.findViewById(R.id.scroll_container);
+
         mCvCountdownView = (CountdownView) v.findViewById(R.id.countdown);
         searchLayout = v.findViewById(R.id.search_lay);
         micSearch = v.findViewById(R.id.mic_search);
@@ -158,15 +192,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
                 requireActivity().startActivity(new Intent(requireActivity(), ProductSearchActivity.class));
             }
         });
-        authResponse = new UserPrefs(requireActivity()).getAuthPreferenceObjectJson("auth_response");
-        cartPresenter = new CartPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
-
-        if(authResponse != null && authResponse.getUser() != null){
-            cartPresenter.getCartItems(authResponse.getUser().getId(), authResponse.getAccessToken());
-        }
-        else {
-
-        }
 
         micSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,6 +202,22 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
             }
         });
 
+        titleAnimator(todayDealTxt);
+
+//        scrollContainer.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+//            @Override
+//            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+//                if(featured_categories_text.getX() < bottom){
+//
+//                }
+//            }
+//        });
+
+        authResponse = new UserPrefs(requireActivity()).getAuthPreferenceObjectJson("auth_response");
+        cartPresenter = new CartPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
+        if(authResponse != null && authResponse.getUser() != null){
+            cartPresenter.getCartItems(authResponse.getUser().getId(), authResponse.getAccessToken());
+        }
         return v;
     }
 
@@ -583,5 +624,23 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
                 Toast.makeText(requireActivity(), "You did not have TTS installed !!!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void titleAnimator(TextView textView){
+//        Integer colorFrom = getResources().getColor(R.color.red);
+//        Integer colorTo = getResources().getColor(R.color.blue);
+//
+        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), Color.BLACK, Color.YELLOW);
+        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+            @Override
+            public void onAnimationUpdate(ValueAnimator animator) {
+                textView.setTextColor((Integer)animator.getAnimatedValue());
+            }
+
+        });
+        colorAnimation.setDuration(1200);
+        colorAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        colorAnimation.start();
     }
 }

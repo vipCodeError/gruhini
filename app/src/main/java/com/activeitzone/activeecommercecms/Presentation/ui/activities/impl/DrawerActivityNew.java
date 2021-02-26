@@ -39,6 +39,7 @@ import com.activeitzone.activeecommercecms.Utils.UserPrefs;
 import com.activeitzone.activeecommercecms.domain.executor.impl.ThreadExecutor;
 import com.activeitzone.activeecommercecms.domain.interactors.AppSettingsInteractor;
 import com.activeitzone.activeecommercecms.domain.interactors.impl.AppSettingsInteractorImpl;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -83,11 +84,16 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
 
     public CartCountListener setCartCountListener;
 
-
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_new);
+
+        bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setItemIconTintList(null);
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
@@ -156,6 +162,29 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
 
             }
         });
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.nav_home:
+                                loadFragment(homeFragment);
+                                break;
+                            case R.id.nav_categories:
+                                loadFragment(categoriesFragment);
+                                break;
+                            case R.id.nav_user_cart:
+                                //loadFragment(cart);
+                                break;
+
+                            case R.id.wishlist:
+                                loadFragment(wishListFragment);
+                                break;
+                        }
+                        return true;
+                    }
+                });
 
 
         preferenceBtn = navigationView.getHeaderView(0).findViewById(R.id.preference);
