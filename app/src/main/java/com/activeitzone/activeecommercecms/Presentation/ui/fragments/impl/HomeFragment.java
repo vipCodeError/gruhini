@@ -312,12 +312,13 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     public void setTopCategories(List<Category> categories) {
         RecyclerView recyclerView = v.findViewById(R.id.top_categories);
         GridLayoutManager horizontalLayoutManager
-                = new GridLayoutManager(getActivity(), 1, GridLayoutManager.HORIZONTAL, false);
+                = new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
         TopCategoryAdapter adapter = new TopCategoryAdapter(getActivity(), categories, HomeFragment.this);
-        recyclerView.addItemDecoration( new LayoutMarginDecoration( 1,  AppConfig.convertDpToPx(getContext(), 10)) );
+        recyclerView.addItemDecoration( new LayoutMarginDecoration( 3,  AppConfig.convertDpToPx(getContext(), 4)) );
         recyclerView.setAdapter(adapter);
 
+        // this part of code will fetch data categoires wise for categories wise card
         categoriesListPresenter = new HomePresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
         categoriesListPresenter.getCategoriesWiseManProduct(categories.get(5).getLinks().getProducts());
         categoriesListPresenter.getCategoriesWiseWomanProduct(categories.get(10).getLinks().getProducts());
@@ -329,7 +330,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         categoriesListPresenter.getCategoriesMobilePcProduct(categories.get(6).getLinks().getProducts());
         categoriesListPresenter.getCategoriesKitchenHomesProduct(categories.get(4).getLinks().getProducts());
         categoriesListPresenter.getCategoriesSportsFitnessProduct(categories.get(7).getLinks().getProducts());
-
 
     }
 
