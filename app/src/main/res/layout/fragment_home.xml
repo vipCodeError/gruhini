@@ -92,7 +92,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="FEATURED CATEGORIES"
+                        android:text="TOP CATEGORIES"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
                         android:textColor="@color/card_title"
@@ -685,7 +685,7 @@
 
                 <RelativeLayout
                     android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
+                    android:background="@drawable/rounded_white_card"
                     android:padding="4dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">

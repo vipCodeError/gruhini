@@ -627,10 +627,10 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     public void titleAnimator(TextView textView){
-//        Integer colorFrom = getResources().getColor(R.color.red);
-//        Integer colorTo = getResources().getColor(R.color.blue);
+        Integer colorFrom = getResources().getColor(R.color.carbon_red_800);
+        Integer colorTo = getResources().getColor(R.color.carbon_white);
 //
-        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), Color.BLACK, Color.YELLOW);
+        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
         colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
             @Override
@@ -640,6 +640,8 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
 
         });
         colorAnimation.setDuration(1200);
+        colorAnimation.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnimation.setRepeatCount(100);
         colorAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
         colorAnimation.start();
     }

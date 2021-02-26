@@ -14,10 +14,13 @@
     <color name="colorWarning">#ffc107</color>
     <color name="colorDanger">#dc3545</color>
     <color name="colorInfo">#17a2b8</color>
-    <color name="card_title">#9C232121</color>
+    <color name="card_title">#FFFFFF</color>
     <color name="card_back_color">#fff</color>
     <color name="product_card_back_color">#fff</color>
     <color name="cat_card_round_color">#193F51B5</color>
     <color name="toolbar_back_color">#fff</color>
     <color name="common_color">#DCD1FE</color>
+    <color name="main_color_primary">#CDDC39</color>
+    <color name="main_color_primary_fifty_alpha">#CDDC39</color>
+    <color name="main_color_category_seven_five_alpha">#F5F5F5</color>
 </resources>

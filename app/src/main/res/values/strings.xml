@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopy Culture</string>
+    <string name="app_name">First Choice Mart</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -13,7 +13,7 @@
     <string name="fb_login_protocol_scheme">fb201826287505269</string>
 
     <string name="server_client_id">442934224344-8c1to424auh7m66j35i3q3j5abtqsgj6.apps.googleusercontent.com</string>
-    <string name="title_activity_drawer_new">Shopy Culture</string>
+    <string name="title_activity_drawer_new">First Choice Mart</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">User</string>

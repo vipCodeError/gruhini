@@ -85,6 +85,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
     public CartCountListener setCartCountListener;
 
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,7 +176,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
                                 loadFragment(categoriesFragment);
                                 break;
                             case R.id.nav_user_cart:
-                                //loadFragment(cart);
+                                loadFragment(cartFragment);
                                 break;
 
                             case R.id.wishlist:
@@ -266,7 +267,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_home){
-                    title.setText("Shopy Culture");
+                    title.setText(getResources().getString(R.string.app_name));
                     loadFragment(homeFragment);
                 }else if(item.getItemId() == R.id.nav_categories){
                      title.setText("Categories");
@@ -364,7 +365,24 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
                     active = wishListFragment;
                 }
                 else {
-                    startActivityForResult(new Intent(DrawerActivityNew.this, LoginActivity.class), 100);
+                    AlertDialog.Builder signInDialog = new AlertDialog.Builder(DrawerActivityNew.this);
+                    signInDialog.setTitle("Message");
+                    signInDialog.setMessage("In Order to see your WishList. You need to Sign In first. ");
+                    signInDialog.setPositiveButton("SIGN IN", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivityForResult(new Intent(DrawerActivityNew.this, LoginActivity.class), 100);
+                        }
+                    });
+
+                    signInDialog.setNegativeButton("LATER", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    signInDialog.show();
                 }
 
             }else if (fragment == purchaseHistoryFragment){
