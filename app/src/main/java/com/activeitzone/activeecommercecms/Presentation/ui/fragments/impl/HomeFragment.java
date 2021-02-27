@@ -241,22 +241,13 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
             TextSliderView textSliderView = new TextSliderView(getContext());
             textSliderView
                     .description("")
-                    //.image(AppConfig.ASSET_URL + sliderImage.getPhoto())
-                    .image("https://image.freepik.com/free-vector/pomegranate-cosmetic-bottles-beauty-banner_33099-2264.jpg")
+                    .image(AppConfig.ASSET_URL + sliderImage.getPhoto())
                     .setScaleType(BaseSliderView.ScaleType.Fit);
             bannerOne.addSlider(textSliderView);
-            bannerTwo.addSlider(textSliderView);
-            bannerThree.addSlider(textSliderView);
-            bannerFour.addSlider(textSliderView);
-            //Log.d("Sliders", AppConfig.ASSET_URL + sliderImage.getPhoto());
         }
 
         setBannertProperty(bannerOne);
-        setBannertProperty(bannerTwo);
-        setBannertProperty(bannerThree);
-        setBannertProperty(bannerFour);
 
-        // Glide.with(getContext()).load(AppConfig.ASSET_URL + sliderImages.get(0).getPhoto()).transform(new BlurTransformation(75, 1)).into(imageSliderShadow);
     }
 
     @Override
@@ -306,6 +297,33 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     @Override
     public void setBanners(List<Banner> banners) {
 
+        TextSliderView textSliderView1 = new TextSliderView(getContext());
+        textSliderView1
+                .description("")
+                .image(AppConfig.ASSET_URL + banners.get(0).getPhoto())
+                .setScaleType(BaseSliderView.ScaleType.Fit);
+
+        TextSliderView textSliderView2 = new TextSliderView(getContext());
+        textSliderView2
+                .description("")
+                .image(AppConfig.ASSET_URL + banners.get(0).getPhoto())
+                .setScaleType(BaseSliderView.ScaleType.Fit);
+
+        TextSliderView textSliderView3 = new TextSliderView(getContext());
+        textSliderView3
+                .description("")
+                .image(AppConfig.ASSET_URL + banners.get(0).getPhoto())
+                .setScaleType(BaseSliderView.ScaleType.Fit);
+
+
+        bannerTwo.addSlider(textSliderView1);
+        bannerThree.addSlider(textSliderView2);
+        bannerFour.addSlider(textSliderView3);
+
+
+        setBannertProperty(bannerTwo);
+        setBannertProperty(bannerThree);
+        setBannertProperty(bannerFour);
     }
 
     @Override

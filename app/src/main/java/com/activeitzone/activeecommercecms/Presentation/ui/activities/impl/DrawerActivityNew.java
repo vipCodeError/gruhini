@@ -3,7 +3,10 @@ package com.activeitzone.activeecommercecms.Presentation.ui.activities.impl;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -227,6 +230,28 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
                 startActivity(new Intent(DrawerActivityNew.this, LoginActivity.class));
             }
         });
+
+        navigationView.getHeaderView(0).findViewById(R.id.cart_header_lay).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(cartFragment);
+            }
+        });
+
+        navigationView.getHeaderView(0).findViewById(R.id.whishlist_header_layout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(wishListFragment);
+            }
+        });
+
+        navigationView.getHeaderView(0).findViewById(R.id.history_header_layout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(purchaseHistoryFragment);
+            }
+        });
+
         navigationView.setItemIconTintList(null);
 
         //logout navigation
@@ -290,18 +315,34 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
                     title.setText("Purchase History");
                     loadFragment(purchaseHistoryFragment);
                 }
-//                else if(item.getItemId() == R.id.my_wallet){
-//                    title.setText("My Wallet");
-//                    loadFragment(walletFragment);
-//                }
+                else if(item.getItemId() == R.id.my_wallet){
+                    title.setText("My Wallet");
+                    loadFragment(walletFragment);
+                }
                 else if(item.getItemId() == R.id.about_us){
                     title.setText("About Us");
                     loadFragment(about_usfragment);
                 } else if(item.getItemId() == R.id.contact_us){
                     title.setText("Contact Us");
                     loadFragment(contact_usfragment);
+                } else if(item.getItemId() == R.id.share_app){
+                    Uri imageUri = null;
+                    try {
+                        imageUri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(),
+                                BitmapFactory.decodeResource(getResources(), R.drawable.splash), null, null));
+                    } catch (NullPointerException e) {
+                    }
+                    Intent share = new Intent(Intent.ACTION_SEND);
+                    share.setType("image/*");
+                    share.putExtra(Intent.EXTRA_STREAM, imageUri);
+                    share.putExtra(Intent.EXTRA_TEXT,   "Grow Your Business With Our Unified" +
+                            " Platform. Start Your 14 Day Free Trial Now! Mobile Commerce Ready. " +
+                            "Unlimited Bandwidth. Drop Shipping Integration. 99.99% Average Uptime." +
+                            " Fraud Prevention. 100+ Professional Themes. SSL Certificate. Social " +
+                            "Media Integration.\n\n"+"https://play.google.com/store/apps/details?id="
+                            + DrawerActivityNew.this.getPackageName());
+                    startActivity(Intent.createChooser(share,  " First Choice Mart "));
                 }
-
 
                 return true;
             }

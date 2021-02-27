@@ -22,7 +22,7 @@ public class RegisterPresenter extends AbstractPresenter implements RegisterInte
     }
 
     @Override
-    public void onRegistrationDone(String registrationResponse) {
+    public void onRegistrationDone(RegistrationResponse registrationResponse) {
         if (registerView != null){
             registerView.setRegistrationResponse(registrationResponse);
         }

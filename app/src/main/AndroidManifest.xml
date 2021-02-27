@@ -85,7 +85,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Presentation.ui.activities.impl.RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".Presentation.ui.activities.impl.ShippingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -105,7 +105,7 @@
         <!-- tools:ignore="LockedOrientationActivity" /> -->
         <activity
             android:name=".Presentation.ui.activities.impl.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
             android:launchMode="singleTask">

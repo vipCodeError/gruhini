@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
@@ -16,13 +17,15 @@
         android:visibility="gone"
         />
 
+
     <ImageView
-        android:src="@drawable/shopping_girl"
-        android:scaleType="fitXY"
-        android:scaleX="1.1"
-        android:foreground="#86000000"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:id="@+id/first_choice_img"
+        android:background="@drawable/splash"
+        android:layout_above="@id/tvSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"/>
 
     <TextView
         android:id="@+id/tvSignIn"
@@ -31,38 +34,42 @@
         android:text="SIGN IN"
         android:fontFamily="@font/archia"
         android:letterSpacing="0.1"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_marginBottom="16dp"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:layout_above="@id/c_l_view"
-        />
+        android:layout_above="@id/card_sign_in"
+        android:textColor="#43A047" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/c_l_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:cardBackgroundColor="#B4F6F6F6"
-        android:elevation="10dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginBottom="-20dp">
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/c_l_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        app:cardBackgroundColor="#7CB342"-->
+<!--        android:elevation="10dp"-->
+<!--        android:layout_margin="16dp"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        android:layout_marginBottom="-20dp">-->
 
         <LinearLayout
+            android:id="@+id/card_sign_in"
+            android:layout_centerInParent="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
-
-
 
             <!-- Email Label -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#252524"
+                app:boxStrokeColor="#7CB342"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxBackgroundColor="#fff"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
@@ -78,6 +85,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#252524"
+                app:boxStrokeColor="#7CB342"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
@@ -89,13 +99,13 @@
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:background="@color/colorPrimary"
+                android:background="#7CB342"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="12dp"
                 android:text="SIGN IN"
@@ -160,7 +170,7 @@
 
             <TextView
                 android:id="@+id/link_forgotPassword"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
@@ -170,7 +180,7 @@
 
             <TextView
                 android:id="@+id/link_signUp"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="No account yet? Create one"
@@ -178,5 +188,5 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+<!--    </androidx.cardview.widget.CardView>-->
 </RelativeLayout>

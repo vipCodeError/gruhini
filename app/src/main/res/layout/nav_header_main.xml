@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="210dp"
     android:background="@color/main_color_primary"
     android:gravity="bottom"
     android:orientation="vertical"
@@ -63,10 +63,103 @@
             android:src="@drawable/man"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingBottom="19dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/cart_header_lay"
+            android:background="@drawable/rounded_header_card"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/header_cart"
+                android:background="@drawable/shopping_cart"
+                android:layout_width="20dp"
+                android:layout_centerInParent="true"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:text="CART"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/header_cart"
+                android:layout_centerHorizontal="true"
+                android:textColor="#7C000000"
+                android:textSize="12sp"
+                android:fontFamily="@font/ptsans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/whishlist_header_layout"
+            android:background="@drawable/rounded_header_card"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/header_wishlist"
+                android:background="@drawable/wishlist"
+                android:layout_width="20dp"
+                android:layout_centerInParent="true"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:text="WISHLIST"
+                android:layout_below="@id/header_wishlist"
+                android:layout_centerHorizontal="true"
+                android:textColor="#8B000000"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/ptsans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/history_header_layout"
+            android:background="@drawable/rounded_header_card"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/header_history"
+                android:background="@drawable/purchase_history"
+                android:layout_width="20dp"
+                android:layout_centerInParent="true"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:text="HISTORY"
+                android:layout_below="@id/header_history"
+                android:layout_centerHorizontal="true"
+                android:textColor="#8B000000"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/ptsans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:background="@drawable/rounded_header_card"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_margin="4dp"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="80dp">-->
+<!--            <ImageView-->
+<!--                android:background="@drawable/wallet"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_height="24dp"/>-->
+<!--        </RelativeLayout>-->
+    </LinearLayout>
 </LinearLayout>

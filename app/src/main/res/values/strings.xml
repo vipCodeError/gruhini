@@ -39,6 +39,7 @@
     <string name="application_information_group" />
     <string name="price_below_10000"><![CDATA[Price < Below 10000]]></string>
     <string name="title_activity_addresss_picup">Map</string>
+    <string name="share_us">Share Us</string>
 
 
 </resources>

@@ -33,21 +33,21 @@ public class RegisterInteractorImpl extends AbstractInteractor {
 
        // String modifiedJson = jsonObject.toString().substring(1, jsonObject.toString().length() - 1);
 
-        Call<String> call = apiService.sendResgisterRequest(jsonObject);
+        Call<RegistrationResponse> call = apiService.sendResgisterRequest(jsonObject);
 
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<RegistrationResponse>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
                 try {
                     Log.d("Test", String.valueOf(response.body()));
-                    mCallback.onRegistrationDone(response.message());
+                    mCallback.onRegistrationDone(response.body());
                 } catch (Exception e) {
                     Log.e("Exception", e.getMessage());
                 }
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<RegistrationResponse> call, Throwable t) {
                 //Log.d("Test", String.valueOf(call.isExecuted()));
                 mCallback.onRegistrationError();
             }

@@ -53,21 +53,6 @@ public class WalletFragment extends Fragment implements WalletView {
         return  view;
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_wallet);
-//
-//        initializeActionBar();
-//        setTitle("My Wallet");
-//
-//
-//
-//    }
-
-    private void initviews(){
-
-    }
 
     @Override
     public void setWalletBalance(Double balance) {

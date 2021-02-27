@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.activeitzone.activeecommercecms.Network.response.RegistrationResponse;
 import com.activeitzone.activeecommercecms.Presentation.presenters.RegisterPresenter;
@@ -18,8 +21,8 @@ import com.google.gson.JsonObject;
 
 public class RegisterActivity extends BaseActivity implements RegisterView {
 
-    private TextView input_name, input_email, input_password, input_confirm_password;
-    private Button btn_signUp;
+    private TextView input_name, input_email, input_password, input_confirm_password, already_sign_in;
+    private AppCompatButton btn_signUp;
     private Boolean isValid;
 
     @Override
@@ -31,6 +34,14 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         // setTitle("My Account");
 
         initviews();
+
+        already_sign_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
 
         btn_signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,13 +93,19 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         input_password = findViewById(R.id.input_password);
         input_confirm_password = findViewById(R.id.input_confirm_password);
         btn_signUp = findViewById(R.id.btn_signUp);
+        already_sign_in = findViewById(R.id.already_sign_in);
     }
 
     @Override
-    public void setRegistrationResponse(String registrationResponse) {
-        CustomToast.showToast(this, "Register Successfuly", R.color.colorSuccess);
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        finish();
+    public void setRegistrationResponse(RegistrationResponse registrationResponse) {
+        if (registrationResponse != null){
+            Toast.makeText(this, registrationResponse.getMessage(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }else {
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

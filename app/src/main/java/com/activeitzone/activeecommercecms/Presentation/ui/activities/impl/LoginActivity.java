@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.activeitzone.activeecommercecms.Network.response.AuthResponse;
 import com.activeitzone.activeecommercecms.Presentation.presenters.LoginPresenter;
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.LoginView;
@@ -42,7 +44,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     private TextView tvEmail;
     private TextView tvPassword, link_signUp, link_forgotPassword;
-    private Button bLogin;
+    private AppCompatButton bLogin;
     private CallbackManager callbackManager;
     private Button fb, google;
     private LoginButton loginButton;
@@ -209,13 +211,15 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void setLoginResponse(AuthResponse authResponse) {
-        UserPrefs userPrefs = new UserPrefs(getApplicationContext());
-        userPrefs.setAuthPreferenceObject(authResponse, "auth_response");
-        CustomToast.showToast(LoginActivity.this, "Hey "+ userPrefs.getAuthPreferenceObjectJson("auth_response").getUser().getName(), Toast.LENGTH_SHORT);
+        if (authResponse != null){
+            UserPrefs userPrefs = new UserPrefs(getApplicationContext());
+            userPrefs.setAuthPreferenceObject(authResponse, "auth_response");
+            Toast.makeText(LoginActivity.this, "Hey "+ userPrefs.getAuthPreferenceObjectJson("auth_response").getUser().getName(), Toast.LENGTH_SHORT).show();
+            refresh();
+        }else{
+            Toast.makeText(LoginActivity.this, "Your Email or Password may be wrong.", Toast.LENGTH_SHORT).show();
+        }
 
-//        Intent returnIntent = new Intent();
-//        setResult(Activity.RESULT_OK, returnIntent);
-        refresh();
     }
 
     public void refresh() {

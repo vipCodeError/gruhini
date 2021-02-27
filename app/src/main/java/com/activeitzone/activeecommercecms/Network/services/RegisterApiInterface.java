@@ -11,5 +11,5 @@ import retrofit2.http.POST;
 public interface RegisterApiInterface {
     @Headers("Content-Type: application/json")
     @POST("auth/signup")
-    Call<String> sendResgisterRequest(@Body JsonObject jsonObject);
+    Call<RegistrationResponse> sendResgisterRequest(@Body JsonObject jsonObject);
 }
