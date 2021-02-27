@@ -314,13 +314,13 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         TextSliderView textSliderView2 = new TextSliderView(getContext());
         textSliderView2
                 .description("")
-                .image(AppConfig.ASSET_URL + banners.get(0).getPhoto())
+                .image(AppConfig.ASSET_URL + banners.get(1).getPhoto())
                 .setScaleType(BaseSliderView.ScaleType.Fit);
 
         TextSliderView textSliderView3 = new TextSliderView(getContext());
         textSliderView3
                 .description("")
-                .image(AppConfig.ASSET_URL + banners.get(0).getPhoto())
+                .image(AppConfig.ASSET_URL + banners.get(2).getPhoto())
                 .setScaleType(BaseSliderView.ScaleType.Fit);
 
 
