@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="#fff"
+        android:background="#C0CA33"
         android:layout_alignParentTop="true"
         app:titleTextColor="#0C0C0C"
         android:id="@+id/toolbar"/>
@@ -432,7 +432,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#3F51B5"
+            android:background="#7CB342"
             android:textColor="@android:color/white"
             android:text="BUY NOW"
             android:textStyle="bold"/>

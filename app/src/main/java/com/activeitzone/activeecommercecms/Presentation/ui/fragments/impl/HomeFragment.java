@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
@@ -116,7 +117,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     private TextView flash_deals_text, featured_categories_text,
             featured_products_text, mens_wear_txt,woman_wear_txt,
             beauty_txt, bag_luggage_txt, kitchen_home_appliance_txt,
-            mobile_pc_txt, sports_and_fitness_txt,
+            mobile_pc_txt, sports_and_fitness_txt, electronics_txt, books_txt,
             baby_txt,best_selling_text, todayDealTxt;
 
     private ScrollView scrollContainer;
@@ -203,15 +204,22 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         });
 
         titleAnimator(todayDealTxt);
-
-//        scrollContainer.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-//            @Override
-//            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-//                if(featured_categories_text.getX() < bottom){
 //
+//        scrollContainer.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+//            @Override
+//            public void onScrollChanged() {
+//                int scrollY = scrollContainer.getScrollY(); // For ScrollView
+//                int scrollX = scrollContainer.getScrollX(); // For HorizontalScrollView
+//                if (featured_categories_text.getY() < scrollY){
+//                    shakeAnimation(featured_categories_text);
+//                }else if(featured_products_text.getY() < scrollY){
+//                    shakeAnimation(featured_products_text);
 //                }
+//                // DO SOMETHING WITH THE SCROLL COORDINATES
 //            }
 //        });
+
+
 
         authResponse = new UserPrefs(requireActivity()).getAuthPreferenceObjectJson("auth_response");
         cartPresenter = new CartPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
@@ -360,11 +368,12 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     public void setFeaturedProducts(List<Product> products) {
         RecyclerView recyclerView = v.findViewById(R.id.featured_products);
         GridLayoutManager horizontalLayoutManager
-                = new GridLayoutManager(getActivity(), 2, GridLayoutManager.HORIZONTAL, false);
+                = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
         FeaturedProductAdapter adapter = new FeaturedProductAdapter(getActivity(), products, this);
         recyclerView.addItemDecoration( new LayoutMarginDecoration( 2,  AppConfig.convertDpToPx(getContext(), 10)) );
         recyclerView.setAdapter(adapter);
+        shakeAnimation(featured_products_text);
     }
 
     @Override
@@ -390,6 +399,19 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         categoriesListPresenter.getCategoriesKitchenHomesProduct(categories.get(4).getLinks().getProducts());
         categoriesListPresenter.getCategoriesSportsFitnessProduct(categories.get(7).getLinks().getProducts());
 
+        mens_wear_txt.setText(categories.get(5).getName().toUpperCase());
+        woman_wear_txt.setText(categories.get(10).getName().toUpperCase());
+        beauty_txt.setText(categories.get(1).getName().toUpperCase());
+      //  .setText(categories.get(10).getName().toUpperCase());
+        baby_txt.setText(categories.get(8).getName().toUpperCase());
+        bag_luggage_txt.setText(categories.get(0).getName().toUpperCase());
+      //  .setText(categories.get(10).getName().toUpperCase());
+        mobile_pc_txt.setText(categories.get(6).getName().toUpperCase());
+        kitchen_home_appliance_txt.setText(categories.get(4).getName().toUpperCase());
+        sports_and_fitness_txt.setText(categories.get(7).getName().toUpperCase());
+
+        shakeAnimation(featured_categories_text);
+
     }
 
     @Override
@@ -401,6 +423,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         BrandAdapter adapter = new BrandAdapter(getActivity(), brands, this);
         recyclerView.addItemDecoration( new LayoutMarginDecoration( 2,  AppConfig.convertDpToPx(getContext(), 10)) );
         recyclerView.setAdapter(adapter);
+
     }
 
     @Override
@@ -524,6 +547,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(mens_wear_txt);
     }
 
     @Override
@@ -532,6 +556,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(woman_wear_txt);
     }
 
     @Override
@@ -540,6 +565,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+       // shakeAnimation(electronics_txt);
     }
 
     @Override
@@ -548,6 +574,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(beauty_txt);
     }
 
     @Override
@@ -564,6 +591,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+       // shakeAnimation(books_txt);
     }
 
     @Override
@@ -572,6 +600,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(kitchen_home_appliance_txt);
     }
 
     @Override
@@ -580,6 +609,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(mobile_pc_txt);
     }
 
     @Override
@@ -588,6 +618,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(sports_and_fitness_txt);
     }
 
     @Override
@@ -596,6 +627,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(baby_txt);
     }
 
     @Override
@@ -659,8 +691,15 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         });
         colorAnimation.setDuration(1200);
         colorAnimation.setRepeatMode(ValueAnimator.REVERSE);
-        colorAnimation.setRepeatCount(100);
+        colorAnimation.setRepeatCount(ValueAnimator.INFINITE);
         colorAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
         colorAnimation.start();
+    }
+
+    public void shakeAnimation(TextView textView){
+        ObjectAnimator
+                .ofFloat(textView, "translationX", -1000, 16)
+                .setDuration(900)
+                .start();
     }
 }
