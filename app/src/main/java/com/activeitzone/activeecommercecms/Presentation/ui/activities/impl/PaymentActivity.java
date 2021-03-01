@@ -291,18 +291,6 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
     }
 
     @Override
-    public void onOrderCodSubmitted(OrderResponse orderResponse) {
-        progressDialog.dismiss();
-        if (orderResponse.getSuccess()){
-            startActivity(new Intent(PaymentActivity.this, OrderPlacedMessage.class));
-            finish();
-        }
-        else {
-            CustomToast.showToast(this, orderResponse.getMessage(), R.color.colorDanger);
-        }
-    }
-
-    @Override
     public void onPaymentSuccess(String s, PaymentData paymentData) {
 
         jsonObject.addProperty("shipping_address", shipping_address);

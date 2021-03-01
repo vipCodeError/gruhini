@@ -6,5 +6,4 @@ import com.activeitzone.activeecommercecms.Network.response.OrderResponse;
 public interface PaymentView {
     void onCouponApplied(CouponResponse couponResponse);
     void onOrderSubmitted(OrderResponse orderResponse);
-    void onOrderCodSubmitted(OrderResponse orderResponse);
 }
