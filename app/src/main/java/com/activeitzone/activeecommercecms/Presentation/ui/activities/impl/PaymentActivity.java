@@ -256,7 +256,7 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
         }
 
         if (payment_method.equals("cod")){
-            new PaymentPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), (PaymentView) this).submitCODOrder(authResponse.getAccessToken(), jsonObject);
+            new PaymentPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), (CodOrderView) this).submitCODOrder(authResponse.getAccessToken(), jsonObject);
         }
     }
 
@@ -282,7 +282,18 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
     public void onOrderSubmitted(OrderResponse orderResponse) {
         progressDialog.dismiss();
         if (orderResponse.getSuccess()){
+            startActivity(new Intent(PaymentActivity.this, OrderPlacedMessage.class));
+            finish();
+        }
+        else {
+            CustomToast.showToast(this, orderResponse.getMessage(), R.color.colorDanger);
+        }
+    }
 
+    @Override
+    public void onOrderCodSubmitted(OrderResponse orderResponse) {
+        progressDialog.dismiss();
+        if (orderResponse.getSuccess()){
             startActivity(new Intent(PaymentActivity.this, OrderPlacedMessage.class));
             finish();
         }
@@ -334,7 +345,6 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
     public void onCodOrderSubmitted(OrderResponse orderResponse) {
         progressDialog.dismiss();
         if (orderResponse.getSuccess()){
-
             startActivity(new Intent(PaymentActivity.this, OrderPlacedMessage.class));
             finish();
         }

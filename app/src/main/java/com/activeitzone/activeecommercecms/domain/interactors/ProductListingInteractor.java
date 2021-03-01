@@ -7,25 +7,27 @@ public interface ProductListingInteractor {
 
         void onProductDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductMensDownloaded(ProductListingResponse productListingResponse);
+        void onProductZeroDownload(ProductListingResponse productListingResponse);
 
-        void onProductWomanDownloaded(ProductListingResponse productListingResponse);
+        void onProductFirstDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductBeautyDownloaded(ProductListingResponse productListingResponse);
+        void onProductSecondDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductSportsAndFitnessDownloaded(ProductListingResponse productListingResponse);
+        void onProductThirdDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductToyBabyDownloaded(ProductListingResponse productListingResponse);
+        void onProductFourthDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductElectonicsDownloaded(ProductListingResponse productListingResponse);
+        void onProductFifthDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductMobilePcDownloaded(ProductListingResponse productListingResponse);
+        void onProductSixthDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductKitchenAndHomeDownloaded(ProductListingResponse productListingResponse);
+        void onProductSeventhDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductBagAndLuggageDownloaded(ProductListingResponse productListingResponse);
+        void onProductEigthDownloaded(ProductListingResponse productListingResponse);
 
-        void onProductBooksDownloaded(ProductListingResponse productListingResponse);
+        void onProductNinthDownloaded(ProductListingResponse productListingResponse);
+
+        void onProductTenthDownloaded(ProductListingResponse productListingResponse);
 
         void onProductDownloadError();
     }

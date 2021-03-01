@@ -28,54 +28,60 @@ public class ProductListingPresenter extends AbstractPresenter implements Produc
     }
 
     @Override
-    public void onProductMensDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductZeroDownload(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductWomanDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductFirstDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductBeautyDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductSecondDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductSportsAndFitnessDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductThirdDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductToyBabyDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductFourthDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductElectonicsDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductFifthDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductMobilePcDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductSixthDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductKitchenAndHomeDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductSeventhDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductBagAndLuggageDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductEigthDownloaded(ProductListingResponse productListingResponse) {
 
     }
 
     @Override
-    public void onProductBooksDownloaded(ProductListingResponse productListingResponse) {
+    public void onProductNinthDownloaded(ProductListingResponse productListingResponse) {
 
     }
+
+    @Override
+    public void onProductTenthDownloaded(ProductListingResponse productListingResponse) {
+
+    }
+
 
     @Override
     public void onProductDownloadError() {

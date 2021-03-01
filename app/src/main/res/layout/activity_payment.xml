@@ -91,10 +91,10 @@
             android:id="@+id/place_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/common_color"
+            android:background="#7CB342"
             android:foreground="?android:attr/selectableItemBackground"
             android:text="PLACE MY ORDER"
-            android:textColor="#272525"
+            android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
     </LinearLayout>

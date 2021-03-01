@@ -28,6 +28,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#fff"
         app:itemTextColor="#353535"
+        app:itemIconTint="@drawable/bottom_navigation_selector"
         app:menu="@menu/bottom_nav_gruh"
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

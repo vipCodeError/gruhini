@@ -97,8 +97,6 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
         bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);
 
-        bottomNavigationView.setItemIconTintList(null);
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         if (getIntent().getStringExtra("position") != null){
@@ -160,7 +158,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
         cartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   navView.setSelectedItemId(R.id.nav_user_cart);
+                // navView.setSelectedItemId(R.id.nav_user_cart);
                 loadFragment(cartFragment);
                // doIncrease();
 
@@ -181,7 +179,6 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
                             case R.id.nav_user_cart:
                                 loadFragment(cartFragment);
                                 break;
-
                             case R.id.wishlist:
                                 loadFragment(wishListFragment);
                                 break;
@@ -381,7 +378,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
             }
 
             else if(fragment == cartFragment){
-                  closeDrawer();
+                closeDrawer();
                 cartFragment = new CartFragment();
                 fm.beginTransaction().remove(fragment).commitAllowingStateLoss();
                 fm.beginTransaction().add(R.id.nav_host_fragment, cartFragment, "cart").hide(cartFragment).commitAllowingStateLoss();
@@ -390,7 +387,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
 
             }
             else if (fragment == accountFragment){
-                  closeDrawer();
+                closeDrawer();
                 accountFragment = new AccountFragment();
                 fm.beginTransaction().remove(fragment).commitAllowingStateLoss();
                 fm.beginTransaction().add(R.id.nav_host_fragment, accountFragment, "account").hide(accountFragment).commitAllowingStateLoss();

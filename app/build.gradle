@@ -5,7 +5,7 @@ def lottieVersion = "3.4.0"
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId 'com.syscryption.shoppyculture'
+        applicationId 'com.syscryption.firstchoicemart'
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 4

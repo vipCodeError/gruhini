@@ -19,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
@@ -115,10 +117,10 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     private final List<AuctionProduct> mAuctionProducts = new ArrayList<>();
     private  AuctionProductAdapter adapter;
     private TextView flash_deals_text, featured_categories_text,
-            featured_products_text, mens_wear_txt,woman_wear_txt,
-            beauty_txt, bag_luggage_txt, kitchen_home_appliance_txt,
-            mobile_pc_txt, sports_and_fitness_txt, electronics_txt, books_txt,
-            baby_txt,best_selling_text, todayDealTxt;
+            featured_products_text, firstProTxt,secondProTxt,
+            thirdProTxt, fourthProTxt, fifthProTxt,
+            sixthProTxt, seventhProTxt, ninth_pro_txt, books_txt,
+            eighthProTxt,best_selling_text, todayDealTxt;
 
     private ScrollView scrollContainer;
 
@@ -141,14 +143,15 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         flash_deals_text = v.findViewById(R.id.flash_deals_text);
         featured_categories_text = v.findViewById(R.id.featured_categories_text);
         featured_products_text = v.findViewById(R.id.featured_products_text);
-        mens_wear_txt = v.findViewById(R.id.mens_wear_txt);
-        woman_wear_txt = v.findViewById(R.id.woman_wear_txt);
-        beauty_txt = v.findViewById(R.id.beauty_txt);
-        bag_luggage_txt = v.findViewById(R.id.bag_luggage_txt);
-        kitchen_home_appliance_txt = v.findViewById(R.id.kitchen_home_appliance_txt);
-        mobile_pc_txt = v.findViewById(R.id.mobile_pc_txt);
-        sports_and_fitness_txt = v.findViewById(R.id.sports_and_fitness_txt);
-        baby_txt = v.findViewById(R.id.baby_txt);
+        firstProTxt = v.findViewById(R.id.first_pro_txt);
+        secondProTxt = v.findViewById(R.id.second_pro_txt);
+        thirdProTxt = v.findViewById(R.id.third_pro_txt);
+        fourthProTxt = v.findViewById(R.id.fourth_pro_txt);
+        fifthProTxt = v.findViewById(R.id.fifth_pro_txt);
+        sixthProTxt = v.findViewById(R.id.sixth_pro_txt);
+        seventhProTxt = v.findViewById(R.id.seven_pro_txt);
+        eighthProTxt = v.findViewById(R.id.eigth_pro_txt);
+        ninth_pro_txt = v.findViewById(R.id.ninth_pro_txt);
         best_selling_text = v.findViewById(R.id.best_selling_text);
         todayDealTxt = v.findViewById(R.id.todays_deals_text);
 
@@ -186,7 +189,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         homePresenter.getTopCategories();
         homePresenter.getBanners();
 
-
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -203,23 +205,14 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
             }
         });
 
+        textMarqueeAnim(firstProTxt);
+        textMarqueeAnim(secondProTxt);
+        textMarqueeAnim(thirdProTxt);
+        textMarqueeAnim(sixthProTxt);
+        textMarqueeAnim(seventhProTxt);
+        textMarqueeAnim(eighthProTxt);
+
         titleAnimator(todayDealTxt);
-//
-//        scrollContainer.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-//            @Override
-//            public void onScrollChanged() {
-//                int scrollY = scrollContainer.getScrollY(); // For ScrollView
-//                int scrollX = scrollContainer.getScrollX(); // For HorizontalScrollView
-//                if (featured_categories_text.getY() < scrollY){
-//                    shakeAnimation(featured_categories_text);
-//                }else if(featured_products_text.getY() < scrollY){
-//                    shakeAnimation(featured_products_text);
-//                }
-//                // DO SOMETHING WITH THE SCROLL COORDINATES
-//            }
-//        });
-
-
 
         authResponse = new UserPrefs(requireActivity()).getAuthPreferenceObjectJson("auth_response");
         cartPresenter = new CartPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
@@ -386,31 +379,29 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.addItemDecoration( new LayoutMarginDecoration( 3,  AppConfig.convertDpToPx(getContext(), 4)) );
         recyclerView.setAdapter(adapter);
 
+        shakeAnimation(featured_categories_text);
+
         // this part of code will fetch data categoires wise for categories wise card
         categoriesListPresenter = new HomePresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
-        categoriesListPresenter.getCategoriesWiseManProduct(categories.get(5).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesWiseWomanProduct(categories.get(10).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesBeautyProduct(categories.get(1).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesBooksProduct(categories.get(2).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesBabyProduct(categories.get(8).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesbBagLuggageProduct(categories.get(0).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesElectronicsProduct(categories.get(9).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesMobilePcProduct(categories.get(6).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesKitchenHomesProduct(categories.get(4).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesSportsFitnessProduct(categories.get(7).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesZerothProduct(categories.get(0).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesFirstProduct(categories.get(1).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesSecondProduct(categories.get(2).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesThirdProduct(categories.get(3).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesbFourthProduct(categories.get(4).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesFiveProduct(categories.get(5).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesSixHomesProduct(categories.get(6).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesSevenProduct(categories.get(7).getLinks().getProducts());
+        categoriesListPresenter.getCategoriesEightFitnessProduct(categories.get(8).getLinks().getProducts());
 
-        mens_wear_txt.setText(categories.get(5).getName().toUpperCase());
-        woman_wear_txt.setText(categories.get(10).getName().toUpperCase());
-        beauty_txt.setText(categories.get(1).getName().toUpperCase());
-      //  .setText(categories.get(10).getName().toUpperCase());
-        baby_txt.setText(categories.get(8).getName().toUpperCase());
-        bag_luggage_txt.setText(categories.get(0).getName().toUpperCase());
-      //  .setText(categories.get(10).getName().toUpperCase());
-        mobile_pc_txt.setText(categories.get(6).getName().toUpperCase());
-        kitchen_home_appliance_txt.setText(categories.get(4).getName().toUpperCase());
-        sports_and_fitness_txt.setText(categories.get(7).getName().toUpperCase());
-
-        shakeAnimation(featured_categories_text);
+        firstProTxt.setText(categories.get(0).getName().toUpperCase());
+        secondProTxt.setText((categories.get(1).getName().toUpperCase()));
+        thirdProTxt.setText(categories.get(2).getName().toUpperCase());
+        fourthProTxt.setText(categories.get(3).getName().toUpperCase());
+        fifthProTxt.setText(categories.get(4).getName().toUpperCase());
+        sixthProTxt.setText(categories.get(5).getName().toUpperCase());
+        seventhProTxt.setText(categories.get(6).getName().toUpperCase());
+        eighthProTxt.setText(categories.get(7).getName().toUpperCase());
+        ninth_pro_txt.setText(categories.get(8).getName().toUpperCase());
 
     }
 
@@ -542,92 +533,99 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setMensWearProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.mens_product_recycler);
+    public void setZerothProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.firt_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-        shakeAnimation(mens_wear_txt);
+        shakeAnimation(firstProTxt);
     }
 
     @Override
-    public void setWomansWearProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.woman_product_recycler);
+    public void setFirstProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.second_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-        shakeAnimation(woman_wear_txt);
+        shakeAnimation(secondProTxt);
     }
 
     @Override
-    public void setElectronicsProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.mobile_pc_product_recycler);
+    public void setSecondProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.third_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-       // shakeAnimation(electronics_txt);
+        shakeAnimation(thirdProTxt);
     }
 
     @Override
-    public void setBeautyProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.beauty_product_recycler);
+    public void setThirdProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.fourth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-        shakeAnimation(beauty_txt);
+        shakeAnimation(fourthProTxt);
     }
 
     @Override
-    public void setBagLuggageProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.bag_luggage_product_recycler);
+    public void setFourthProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.fifth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
+        shakeAnimation(fifthProTxt);
     }
 
     @Override
-    public void setBooksProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.kticehn_product_recycler);
+    public void setFifthProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.sixth_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-       // shakeAnimation(books_txt);
+        shakeAnimation(sixthProTxt);
     }
 
     @Override
-    public void setKitchenHomeAppliance(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.kticehn_product_recycler);
+    public void setSixthProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.seven_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-        shakeAnimation(kitchen_home_appliance_txt);
+        shakeAnimation(seventhProTxt);
     }
 
     @Override
-    public void setMobilePcProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.mobile_pc_product_recycler);
+    public void setSeventhProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.eigth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-        shakeAnimation(mobile_pc_txt);
+        shakeAnimation(seventhProTxt);
     }
 
     @Override
-    public void setSportsFitness(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.sports_and_fitness_recycler);
+    public void setEighthProduct(ProductListingResponse productListingResponse) {
+        RecyclerView recyclerView = v.findViewById(R.id.ninth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
         recyclerView.setAdapter(adapter);
-        shakeAnimation(sports_and_fitness_txt);
+        shakeAnimation(eighthProTxt);
+        shakeAnimation(ninth_pro_txt);
     }
 
     @Override
-    public void setBabyProduct(ProductListingResponse productListingResponse) {
-        RecyclerView recyclerView = v.findViewById(R.id.baby_recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
-        ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
-        recyclerView.setAdapter(adapter);
-        shakeAnimation(baby_txt);
+    public void setNinthFitness(ProductListingResponse productListingResponse) {
+//        RecyclerView recyclerView = v.findViewById(R.id.ninth_pro_recycler);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
+//        ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
+//        recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void setTenthProduct(ProductListingResponse productListingResponse) {
+
     }
 
     @Override
@@ -701,5 +699,12 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
                 .ofFloat(textView, "translationX", -1000, 16)
                 .setDuration(900)
                 .start();
+    }
+
+    public void textMarqueeAnim(TextView textView){
+        if(textView.getText().length() > 30){
+            Animation anim = AnimationUtils.loadAnimation(requireActivity(), R.anim.marquee_anim);
+            textView.startAnimation(anim);
+        }
     }
 }

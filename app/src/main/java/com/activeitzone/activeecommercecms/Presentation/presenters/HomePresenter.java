@@ -102,44 +102,49 @@ public class HomePresenter extends AbstractPresenter implements ProductListingIn
         new AuctionProductInteractorImpl(mExecutor, mMainThread, this).execute();
     }
 
-    public void getCategoriesWiseManProduct(String url){
-        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 5).execute();
-    }
-
-    public void getCategoriesWiseWomanProduct(String url){
-        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 10).execute();
-    }
-
-    public void getCategoriesBeautyProduct(String url){
-        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 1).execute();
-    }
-
-    public void getCategoriesbBagLuggageProduct(String url){
+    public void getCategoriesZerothProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
     }
 
-    public void getCategoriesBooksProduct(String url){
+
+    public void getCategoriesFirstProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 1).execute();
+    }
+
+    public void getCategoriesSecondProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 2).execute();
     }
 
-    public void getCategoriesKitchenHomesProduct(String url){
+    public void getCategoriesThirdProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 3).execute();
+    }
+
+    public void getCategoriesbFourthProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 4).execute();
     }
 
-    public void getCategoriesMobilePcProduct(String url){
+    public void getCategoriesFiveProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 5).execute();
+    }
+
+    public void getCategoriesSixHomesProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 6).execute();
     }
 
-    public void getCategoriesSportsFitnessProduct(String url){
+    public void getCategoriesSevenProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 7).execute();
     }
 
-    public void getCategoriesBabyProduct(String url){
+    public void getCategoriesEightFitnessProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 8).execute();
     }
 
-    public void getCategoriesElectronicsProduct(String url){
+    public void getCategoriesNighthProduct(String url){
         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 9).execute();
+    }
+
+    public void getCategoriesTenthProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 10).execute();
     }
 
 
@@ -294,58 +299,64 @@ public class HomePresenter extends AbstractPresenter implements ProductListingIn
 
     @Override
     public void onProductDownloaded(ProductListingResponse productListingResponse) {
-
+        homeView.setFirstProduct(productListingResponse);
     }
 
     @Override
-    public void onProductMensDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setMensWearProduct(productListingResponse);
+    public void onProductZeroDownload(ProductListingResponse productListingResponse) {
+        homeView.setZerothProduct(productListingResponse);
     }
 
     @Override
-    public void onProductWomanDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setWomansWearProduct(productListingResponse);
+    public void onProductFirstDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setFirstProduct(productListingResponse);
     }
 
     @Override
-    public void onProductBeautyDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setBeautyProduct(productListingResponse);
+    public void onProductSecondDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setSecondProduct(productListingResponse);
     }
 
     @Override
-    public void onProductSportsAndFitnessDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setSportsFitness(productListingResponse);
+    public void onProductThirdDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setThirdProduct(productListingResponse);
     }
 
     @Override
-    public void onProductToyBabyDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setBabyProduct(productListingResponse);
+    public void onProductFourthDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setFourthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductElectonicsDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setElectronicsProduct(productListingResponse);
+    public void onProductFifthDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setFifthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductMobilePcDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setMobilePcProduct(productListingResponse);
+    public void onProductSixthDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setSixthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductKitchenAndHomeDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setKitchenHomeAppliance(productListingResponse);
+    public void onProductSeventhDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setSeventhProduct(productListingResponse);
     }
 
     @Override
-    public void onProductBagAndLuggageDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setBagLuggageProduct(productListingResponse);
+    public void onProductEigthDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setEighthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductBooksDownloaded(ProductListingResponse productListingResponse) {
-        homeView.setBooksProduct(productListingResponse);
+    public void onProductNinthDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setNinthFitness(productListingResponse);
     }
+
+    @Override
+    public void onProductTenthDownloaded(ProductListingResponse productListingResponse) {
+        homeView.setTenthProduct(productListingResponse);
+    }
+
 
     @Override
     public void onProductDownloadError() {

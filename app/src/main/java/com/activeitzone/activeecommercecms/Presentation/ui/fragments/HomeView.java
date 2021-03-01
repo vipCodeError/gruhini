@@ -38,25 +38,27 @@ public interface HomeView {
 
     void onAuctionBidSubmitted(AuctionBidResponse auctionBidResponse);
 
-    void setMensWearProduct(ProductListingResponse productListingResponse);
+    void setZerothProduct(ProductListingResponse productListingResponse);
 
-    void setWomansWearProduct(ProductListingResponse productListingResponse);
+    void setFirstProduct(ProductListingResponse productListingResponse);
 
-    void setElectronicsProduct(ProductListingResponse productListingResponse);
+    void setSecondProduct(ProductListingResponse productListingResponse);
 
-    void setBeautyProduct(ProductListingResponse productListingResponse);
+    void setThirdProduct(ProductListingResponse productListingResponse);
 
-    void setBagLuggageProduct(ProductListingResponse productListingResponse);
+    void setFourthProduct(ProductListingResponse productListingResponse);
 
-    void setBooksProduct(ProductListingResponse productListingResponse);
+    void setFifthProduct(ProductListingResponse productListingResponse);
 
-    void setKitchenHomeAppliance(ProductListingResponse productListingResponse);
+    void setSixthProduct(ProductListingResponse productListingResponse);
 
-    void setMobilePcProduct(ProductListingResponse productListingResponse);
+    void setSeventhProduct(ProductListingResponse productListingResponse);
 
-    void setSportsFitness(ProductListingResponse productListingResponse);
+    void setEighthProduct(ProductListingResponse productListingResponse);
 
-    void setBabyProduct(ProductListingResponse productListingResponse);
+    void setNinthFitness(ProductListingResponse productListingResponse);
+
+    void setTenthProduct(ProductListingResponse productListingResponse);
 
 
 }

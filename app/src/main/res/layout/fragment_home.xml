@@ -173,7 +173,7 @@
 
                     <TextView
                         android:id="@+id/todays_deals_text"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
@@ -182,15 +182,6 @@
                         android:textStyle="bold"
                         android:textColor="@color/card_title"
                         android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/todays_deals_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/todays_deals"
@@ -260,7 +251,7 @@
 
                 </RelativeLayout>
 
-                <!--    Mens Wear's            -->
+                <!--    First product           -->
                 <RelativeLayout
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_card"
@@ -269,13 +260,12 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/mens_wear_txt"
+                        android:id="@+id/first_pro_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="MEN'S WEAR"
                         android:translationX="-1000dp"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
@@ -285,17 +275,17 @@
                     <View
                         android:layout_width="75dp"
                         android:layout_height="3dp"
-                        android:layout_alignBottom="@id/mens_wear_txt"
+                        android:layout_alignBottom="@id/first_pro_txt"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/mens_product_recycler"
+                        android:id="@+id/firt_pro_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/mens_wear_txt"
+                        android:layout_below="@id/first_pro_txt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
@@ -303,7 +293,7 @@
 
                 </RelativeLayout>
 
-                <!--    Woman Wear's            -->
+                <!--    Second pro           -->
                 <RelativeLayout
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_card"
@@ -312,13 +302,12 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/woman_wear_txt"
+                        android:id="@+id/second_pro_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="WOMAN'S WEAR"
                         android:translationX="-1000dp"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
@@ -328,17 +317,17 @@
                     <View
                         android:layout_width="75dp"
                         android:layout_height="3dp"
-                        android:layout_alignBottom="@id/woman_wear_txt"
+                        android:layout_alignBottom="@id/second_pro_txt"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/woman_product_recycler"
+                        android:id="@+id/second_pro_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/woman_wear_txt"
+                        android:layout_below="@id/second_pro_txt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
@@ -346,7 +335,7 @@
 
                 </RelativeLayout>
 
-                <!--    Beauty Wear's            -->
+                <!--    Thrid Product            -->
                 <RelativeLayout
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_card"
@@ -355,13 +344,12 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/beauty_txt"
+                        android:id="@+id/third_pro_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="BEAUTY AND SKINCARE"
                         android:translationX="-1000dp"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
@@ -371,17 +359,17 @@
                     <View
                         android:layout_width="75dp"
                         android:layout_height="3dp"
-                        android:layout_alignBottom="@id/beauty_txt"
+                        android:layout_alignBottom="@id/third_pro_txt"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/beauty_product_recycler"
+                        android:id="@+id/third_pro_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/beauty_txt"
+                        android:layout_below="@id/third_pro_txt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
@@ -389,7 +377,7 @@
 
                 </RelativeLayout>
 
-                <!--    Bags and Luggage            -->
+                <!--   Fourth pro txt            -->
                 <RelativeLayout
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_card"
@@ -398,14 +386,13 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/bag_luggage_txt"
+                        android:id="@+id/fourth_pro_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:translationX="-1000dp"
-                        android:text="BAG AND LUGGAGE"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
                         android:textColor="@color/card_title"
@@ -414,17 +401,17 @@
                     <View
                         android:layout_width="75dp"
                         android:layout_height="3dp"
-                        android:layout_alignBottom="@id/bag_luggage_txt"
+                        android:layout_alignBottom="@id/fourth_pro_txt"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/bag_luggage_product_recycler"
+                        android:id="@+id/fourth_pro_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/bag_luggage_txt"
+                        android:layout_below="@id/fourth_pro_txt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
@@ -432,7 +419,7 @@
 
                 </RelativeLayout>
 
-                <!--    kitchen and home           -->
+                <!--    fifth pro           -->
                 <RelativeLayout
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_card"
@@ -441,13 +428,12 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/kitchen_home_appliance_txt"
+                        android:id="@+id/fifth_pro_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="KITCHEN AND HOME APPLIANCE"
                         android:translationX="-1000dp"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
@@ -457,104 +443,17 @@
                     <View
                         android:layout_width="75dp"
                         android:layout_height="3dp"
-                        android:layout_alignBottom="@id/kitchen_home_appliance_txt"
+                        android:layout_alignBottom="@id/fifth_pro_txt"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/kticehn_product_recycler"
+                        android:id="@+id/fifth_pro_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/kitchen_home_appliance_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-
-                <!--    MOBLIE PC            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/mobile_pc_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:text="MOBILE AND PC"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/mobile_pc_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/mobile_pc_product_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/mobile_pc_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    Sports and fitness            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/sports_and_fitness_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="SPORTS AND FITNESS"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/sports_and_fitness_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/sports_and_fitness_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/sports_and_fitness_txt"
+                        android:layout_below="@id/fifth_pro_txt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
@@ -563,7 +462,7 @@
                 </RelativeLayout>
 
 
-                <!--    Sports and fitness            -->
+                <!--    sixth pro           -->
                 <RelativeLayout
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_card"
@@ -572,13 +471,12 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/baby_txt"
+                        android:id="@+id/sixth_pro_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="TOY AND BABY PRODUCT"
                         android:translationX="-1000dp"
                         android:letterSpacing="0.1"
                         android:textStyle="bold"
@@ -588,17 +486,144 @@
                     <View
                         android:layout_width="75dp"
                         android:layout_height="3dp"
-                        android:layout_alignBottom="@id/baby_txt"
+                        android:layout_alignBottom="@id/sixth_pro_txt"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3F51B5" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/baby_recycler"
+                        android:id="@+id/sixth_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/baby_txt"
+                        android:layout_below="@id/sixth_pro_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Seven pro            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/seven_pro_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:translationX="-1000dp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/seven_pro_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/seven_pro_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/seven_pro_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <!--    Eigth            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/eigth_pro_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:translationX="-1000dp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/eigth_pro_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/eigth_pro_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/eigth_pro_txt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+                <!--    Ninth pro            -->
+                <RelativeLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:padding="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ninth_pro_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:translationX="-1000dp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="@color/card_title"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="75dp"
+                        android:layout_height="3dp"
+                        android:layout_alignBottom="@id/ninth_pro_txt"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#3F51B5" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ninth_pro_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ninth_pro_txt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 

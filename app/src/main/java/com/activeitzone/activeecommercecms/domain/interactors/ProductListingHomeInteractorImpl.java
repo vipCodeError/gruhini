@@ -36,27 +36,28 @@ public class ProductListingHomeInteractorImpl  extends AbstractInteractor {
             public void onResponse(Call<ProductListingResponse> call, Response<ProductListingResponse> response) {
                 try {
                     if (whichInteractor == 5){
-                        mCallback.onProductMensDownloaded(response.body());
+                        mCallback.onProductFifthDownloaded(response.body());
                     }else if(whichInteractor == 10){
-                        mCallback.onProductWomanDownloaded(response.body());
+                        mCallback.onProductTenthDownloaded(response.body());
                     } else if(whichInteractor == 1){
-                        mCallback.onProductBeautyDownloaded(response.body());
+                        mCallback.onProductFirstDownloaded(response.body());
                     } else if(whichInteractor == 0){
-                        mCallback.onProductBagAndLuggageDownloaded(response.body());
+                        mCallback.onProductZeroDownload(response.body());
                     } else if(whichInteractor == 2){
-                        mCallback.onProductBooksDownloaded(response.body());
+                        mCallback.onProductSecondDownloaded(response.body());
                     } else if(whichInteractor == 3){
-                        mCallback.onProductKitchenAndHomeDownloaded(response.body());
+                        mCallback.onProductThirdDownloaded(response.body());
                     } else if(whichInteractor == 4){
-                        mCallback.onProductSportsAndFitnessDownloaded(response.body());
+                        mCallback.onProductFourthDownloaded(response.body());
                     } else if(whichInteractor == 9){
-                        mCallback.onProductElectonicsDownloaded(response.body());
+                        mCallback.onProductNinthDownloaded(response.body());
                     } else if(whichInteractor == 8){
-                        mCallback.onProductToyBabyDownloaded(response.body());
+                        mCallback.onProductEigthDownloaded(response.body());
                     } else if(whichInteractor == 6){
-                        mCallback.onProductMobilePcDownloaded(response.body());
+                        mCallback.onProductSixthDownloaded(response.body());
+                    } else if(whichInteractor == 7){
+                        mCallback.onProductSeventhDownloaded(response.body());
                     }
-
 
                 } catch (Exception e) {
                     Log.e("Exception", e.getMessage());

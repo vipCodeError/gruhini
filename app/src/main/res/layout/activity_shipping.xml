@@ -36,8 +36,8 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/common_color"
-        android:textColor="#2E2C2C"
+        android:background="#7CB342"
+        android:textColor="#FFFFFF"
         android:text="PROCEED TO PAYMENT"
         android:textStyle="bold" />
 
