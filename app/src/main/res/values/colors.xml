@@ -4,8 +4,8 @@
 <!--    <color name="colorPrimary">#ce1745</color>-->
 <!--    <color name="colorPrimaryDark">#ce1745</color>-->
 
-    <color name="colorPrimary">#E62E04</color>
-    <color name="colorPrimaryDark">#CF2A04</color>
+    <color name="colorPrimary">#8BC34A</color>
+    <color name="colorPrimaryDark">#8BC34A</color>
 
     <color name="colorPrimaryLight">#fc8a1a</color>
     <color name="colorAccent">#111111</color>
@@ -20,7 +20,8 @@
     <color name="cat_card_round_color">#F5C7DCAE</color>
     <color name="toolbar_back_color">#fff</color>
     <color name="common_color">#DCD1FE</color>
-    <color name="main_color_primary">#CDDC39</color>
+    <color name="main_color_primary">#8BC34A</color>
+    <color name="green">#8BC34A</color>
     <color name="main_color_primary_fifty_alpha">#F8F7F7</color>
     <color name="main_color_category_seven_five_alpha">#F5F5F5</color>
 </resources>

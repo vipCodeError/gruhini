@@ -11,24 +11,35 @@
         android:background="#A18BC34A">
 
         <ImageView
-            android:id="@+id/splash_id_123"
+            android:id="@+id/grocrey_store_img"
+            android:layout_height="match_parent"
+            android:background="@drawable/grocery_store"
             android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:padding="10dp"
+            android:foreground="#5B131833" />
+
+        <ImageView
+            android:id="@+id/logo_img"
+            android:layout_width="400dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/splash" />
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/splashicon"
+            android:padding="10dp"
+            android:scaleType="centerCrop" />
+
 
         <TextView
-            android:layout_below="@id/splash_id_123"
-            android:text="First Choice Mart"
-            android:fontFamily="@font/ptsans_bold"
-            android:textAlignment="center"
-            android:layout_marginTop="16dp"
-            android:textSize="26sp"
-            android:textColor="#000"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_img"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/archia"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="normal" />
+
 
     </RelativeLayout>
 

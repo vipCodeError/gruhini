@@ -196,7 +196,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            //CustomToast.showToast(LoginActivity.this, "Login Successful", R.color.colorSuccess);
+            CustomToast.showToast(LoginActivity.this, "Login Successful", R.color.colorSuccess);
 
             new LoginPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), LoginActivity.this).
                     validSocialLogin(account.getId(), account.getDisplayName(), account.getEmail());

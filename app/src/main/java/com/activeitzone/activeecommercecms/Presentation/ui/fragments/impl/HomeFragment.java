@@ -697,7 +697,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     public void shakeAnimation(TextView textView){
         ObjectAnimator
                 .ofFloat(textView, "translationX", -1000, 16)
-                .setDuration(900)
+                .setDuration(1000)
                 .start();
     }
 

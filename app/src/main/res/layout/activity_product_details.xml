@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="#C0CA33"
+        android:background="#8BC34A"
         android:layout_alignParentTop="true"
         app:titleTextColor="#0C0C0C"
         android:id="@+id/toolbar"/>
