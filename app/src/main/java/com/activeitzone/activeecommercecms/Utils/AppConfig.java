@@ -9,11 +9,8 @@ import java.text.DecimalFormat;
 public class AppConfig {
     public static AppSettings appSettings;
 
-    public static String BASE_URL = "http://firstchoicemart.in//api/v1/";
-    public static String ASSET_URL =  "http://firstchoicemart.in//public/";
-
-//    public static String BASE_URL = "http://app.firstchoicemart.shopyculture.com//api/v1/";
-//    public static String ASSET_URL = "http://app.firstchoicemart.shopyculture.com//public/";
+    public static String BASE_URL = "http://firstchoicemart.in/api/v1/";
+    public static String ASSET_URL = "http://firstchoicemart.in/public/";
 
 
 //    public static String BASE_URL = "http://aloch.in/api/v1/";

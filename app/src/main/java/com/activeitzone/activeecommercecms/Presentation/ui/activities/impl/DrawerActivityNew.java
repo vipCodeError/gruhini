@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -42,8 +43,11 @@ import com.activeitzone.activeecommercecms.Utils.UserPrefs;
 import com.activeitzone.activeecommercecms.domain.executor.impl.ThreadExecutor;
 import com.activeitzone.activeecommercecms.domain.interactors.AppSettingsInteractor;
 import com.activeitzone.activeecommercecms.domain.interactors.impl.AppSettingsInteractorImpl;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -93,6 +97,26 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_new);
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+
+
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("F_Token", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        String token = task.getResult();
+
+                        // Log and toast
+                        //String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d("F_Token", token);
+                        Toast.makeText(DrawerActivityNew.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottomNavigationView);

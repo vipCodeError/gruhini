@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "442934224344",
-    "project_id": "activeecommercecms",
-    "storage_bucket": "activeecommercecms.appspot.com"
+    "project_number": "969007077025",
+    "project_id": "firstcmart-c60ec",
+    "storage_bucket": "firstcmart-c60ec.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:442934224344:android:8bc61b964d1fb287007ead",
+        "mobilesdk_app_id": "1:969007077025:android:5fff11b002578ff27842e0",
         "android_client_info": {
-          "package_name": "com.activeitzone.activeecommercecms"
+          "package_name": "com.syscryption.firstchoicemart"
         }
       },
       "oauth_client": [
         {
-          "client_id": "442934224344-8c1to424auh7m66j35i3q3j5abtqsgj6.apps.googleusercontent.com",
+          "client_id": "969007077025-te4qmm6ma5lsfiaai0lp5os79tauf3sh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA0xb7oV5J-WCsMJKGBgg5UJIGFVVOliDM"
+          "current_key": "AIzaSyC8I5PtFUUq1Mf8nCKuXMjF8p85m7Put0w"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "442934224344-8c1to424auh7m66j35i3q3j5abtqsgj6.apps.googleusercontent.com",
+              "client_id": "969007077025-te4qmm6ma5lsfiaai0lp5os79tauf3sh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

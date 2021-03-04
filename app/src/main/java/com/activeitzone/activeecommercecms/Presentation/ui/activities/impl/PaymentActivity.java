@@ -122,7 +122,7 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
                 if(payment_method != null){
                     if (payment_method.equals("RazorPay")){
                         JsonObject jsonCreateOrder = new JsonObject();
-                        jsonCreateOrder.addProperty("amount", 1);
+                        jsonCreateOrder.addProperty("amount", total);
                         new PaymentPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), (RazorPayView) PaymentActivity.this).razorPayOrderId(authResponse.getAccessToken(), jsonCreateOrder);
                     }
 
@@ -355,17 +355,17 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
 
                 try {
                     JSONObject options = new JSONObject();
-                    options.put("name", "Shopify Culture");
+                    options.put("name", "First Choice Mart");
                     options.put("description", "Demoing Charges");
                     //You can omit the image option to fetch the image from dashboard
-                    options.put("image", "https://s3.amazonaws.com/zp-mobile/images/rzp.png");
+                    options.put("image", "https://practicebuckett123.s3.ap-south-1.amazonaws.com/splash.png");
                     options.put("currency", "INR");
-                    options.put("amount", 1.00 * 100);
+                    options.put("amount", total * 100);
                     options.put("order_id", jsonObject.get("order_id").getAsString());//from response of step 3.
 
                     JSONObject preFill = new JSONObject();
-                    preFill.put("email", "test@razorpay.com");
-                    preFill.put("contact", "8237798961");
+                    preFill.put("email", authResponse.getUser().getEmail());
+                    preFill.put("contact", authResponse.getUser().getPhone());
 
                     options.put("prefill", preFill);
 
@@ -377,7 +377,6 @@ public class PaymentActivity extends BaseActivity implements CodOrderView, Razor
                 }
             }
         }).start();
-
 
 
     }
