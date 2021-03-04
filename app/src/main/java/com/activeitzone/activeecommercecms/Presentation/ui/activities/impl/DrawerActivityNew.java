@@ -114,7 +114,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
                         // Log and toast
                         //String msg = getString(R.string.msg_token_fmt, token);
                         Log.d("F_Token", token);
-                        Toast.makeText(DrawerActivityNew.this, token, Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(DrawerActivityNew.this, token, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -232,7 +232,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
         }else{
             loginTxt.setVisibility(View.GONE);
             navigationLogout.setVisibility(View.VISIBLE);
-            navigationView.getHeaderView(0).findViewById(R.id.imageView).setVisibility(View.GONE);
+            navigationView.getHeaderView(0).findViewById(R.id.imageView).setVisibility(View.VISIBLE);
             welcomeTxt.setVisibility(View.VISIBLE);
             welcomeTxt.setText("Hey " + authResponse.getUser().getName());
             preferenceBtn.setVisibility(View.VISIBLE);

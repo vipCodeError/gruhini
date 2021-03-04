@@ -69,6 +69,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
                 String password = tvPassword.getText().toString();
                 lottieAnimationView.setVisibility(View.VISIBLE);
                 lottieAnimationView.setRepeatMode(LottieDrawable.RESTART);
+                lottieAnimationView.setRepeatCount(LottieDrawable.INFINITE);
                 new LoginPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), LoginActivity.this).validLogin(email, password);
             }
         });
@@ -217,6 +218,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
             Toast.makeText(LoginActivity.this, "Hey "+ userPrefs.getAuthPreferenceObjectJson("auth_response").getUser().getName(), Toast.LENGTH_SHORT).show();
             refresh();
         }else{
+            lottieAnimationView.setVisibility(View.GONE);
             Toast.makeText(LoginActivity.this, "Your Email or Password may be wrong.", Toast.LENGTH_SHORT).show();
         }
 
