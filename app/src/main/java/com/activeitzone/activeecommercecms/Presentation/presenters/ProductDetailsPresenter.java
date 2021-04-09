@@ -5,6 +5,7 @@ import com.activeitzone.activeecommercecms.Models.ProductDetails;
 import com.activeitzone.activeecommercecms.Network.response.AddToCartResponse;
 import com.activeitzone.activeecommercecms.Network.response.AddToWishlistResponse;
 import com.activeitzone.activeecommercecms.Network.response.CheckWishlistResponse;
+import com.activeitzone.activeecommercecms.Network.response.ProductResponse;
 import com.activeitzone.activeecommercecms.Network.response.RemoveWishlistResponse;
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.ProductDetailsView;
 import com.activeitzone.activeecommercecms.domain.executor.Executor;
@@ -72,6 +73,66 @@ public class ProductDetailsPresenter extends AbstractPresenter implements Produc
 
     @Override
     public void onProductDetailsDownloadError() {
+
+    }
+
+    @Override
+    public void onProductDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductZeroDownload(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductFirstDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductSecondDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductThirdDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductFourthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductFifthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductSixthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductSeventhDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductEigthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductNinthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductTenthDownloaded(ProductResponse productListingResponse) {
 
     }
 

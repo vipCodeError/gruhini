@@ -9,7 +9,9 @@ import com.activeitzone.activeecommercecms.Models.Product;
 import com.activeitzone.activeecommercecms.Models.SliderImage;
 import com.activeitzone.activeecommercecms.Network.response.AppSettingsResponse;
 import com.activeitzone.activeecommercecms.Network.response.AuctionBidResponse;
+import com.activeitzone.activeecommercecms.Network.response.PreferDataResponse;
 import com.activeitzone.activeecommercecms.Network.response.ProductListingResponse;
+import com.activeitzone.activeecommercecms.Network.response.ProductResponse;
 
 import java.util.List;
 
@@ -38,27 +40,29 @@ public interface HomeView {
 
     void onAuctionBidSubmitted(AuctionBidResponse auctionBidResponse);
 
-    void setZerothProduct(ProductListingResponse productListingResponse);
+    void setZerothProduct(ProductResponse productListingResponse);
 
-    void setFirstProduct(ProductListingResponse productListingResponse);
+    void setFirstProduct(ProductResponse productListingResponse);
 
-    void setSecondProduct(ProductListingResponse productListingResponse);
+    void setSecondProduct(ProductResponse productListingResponse);
 
-    void setThirdProduct(ProductListingResponse productListingResponse);
+    void setThirdProduct(ProductResponse productListingResponse);
 
-    void setFourthProduct(ProductListingResponse productListingResponse);
+    void setFourthProduct(ProductResponse productListingResponse);
 
-    void setFifthProduct(ProductListingResponse productListingResponse);
+    void setFifthProduct(ProductResponse productListingResponse);
 
-    void setSixthProduct(ProductListingResponse productListingResponse);
+    void setSixthProduct(ProductResponse productListingResponse);
 
-    void setSeventhProduct(ProductListingResponse productListingResponse);
+    void setSeventhProduct(ProductResponse productListingResponse);
 
-    void setEighthProduct(ProductListingResponse productListingResponse);
+    void setEighthProduct(ProductResponse productListingResponse);
 
-    void setNinthFitness(ProductListingResponse productListingResponse);
+    void setNinthFitness(ProductResponse productListingResponse);
 
-    void setTenthProduct(ProductListingResponse productListingResponse);
+    void setTenthProduct(ProductResponse productListingResponse);
 
+    void getAllPreferData(PreferDataResponse preferDataResponse);
 
+    void getPreferDataBySubShown(ProductResponse productListingResponse);
 }

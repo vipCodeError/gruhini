@@ -81,15 +81,23 @@ public class ProductListtingHomeAdapter extends RecyclerView.Adapter<ProductList
 
         public void bind(Product product) {
             Glide.with(context).load(AppConfig.ASSET_URL + product.getThumbnailImage()).into(image);
-            discounted_price.setText(AppConfig.convertPrice(context, product.getBaseDiscountedPrice()));
-            price.setText(AppConfig.convertPrice(context, product.getBasePrice()));
-            if (product.getBaseDiscountedPrice().equals(product.getBasePrice())) {
-                price.setVisibility(View.GONE);
+            if (product.getBaseDiscountedPrice() != null){
+                discounted_price.setText(AppConfig.convertPrice(context, product.getBaseDiscountedPrice()));
             }
-            price.setPaintFlags(price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            name.setText(product.getName());
-            ratingBar.setRating(product.getRating());
-            sales.setText(product.getSales()+" sold");
+
+            if(product.getBasePrice() != null){
+                price.setText(AppConfig.convertPrice(context, product.getBasePrice()));
+
+                if (product.getBaseDiscountedPrice().equals(product.getBasePrice())) {
+                    price.setVisibility(View.GONE);
+                }
+                price.setPaintFlags(price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                name.setText(product.getName());
+                ratingBar.setRating(product.getRating());
+                sales.setText(product.getSales()+" sold");
+            }
+
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

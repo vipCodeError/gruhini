@@ -1,6 +1,7 @@
 package com.activeitzone.activeecommercecms.Presentation.presenters;
 
 import com.activeitzone.activeecommercecms.Network.response.ProductListingResponse;
+import com.activeitzone.activeecommercecms.Network.response.ProductResponse;
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.ProductListingView;
 import com.activeitzone.activeecommercecms.domain.executor.Executor;
 import com.activeitzone.activeecommercecms.domain.executor.MainThread;
@@ -22,9 +23,7 @@ public class ProductListingPresenter extends AbstractPresenter implements Produc
 
     @Override
     public void onProductDownloaded(ProductListingResponse productListingResponse) {
-        if (productListingView != null){
-            productListingView.setProducts(productListingResponse);
-        }
+
     }
 
     @Override
@@ -81,7 +80,6 @@ public class ProductListingPresenter extends AbstractPresenter implements Produc
     public void onProductTenthDownloaded(ProductListingResponse productListingResponse) {
 
     }
-
 
     @Override
     public void onProductDownloadError() {

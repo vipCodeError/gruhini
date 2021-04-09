@@ -1,6 +1,7 @@
 package com.activeitzone.activeecommercecms.domain.interactors;
 
 import com.activeitzone.activeecommercecms.Network.response.ProductListingResponse;
+import com.activeitzone.activeecommercecms.Network.response.ProductResponse;
 
 public interface ProductListingInteractor {
     interface CallBack {

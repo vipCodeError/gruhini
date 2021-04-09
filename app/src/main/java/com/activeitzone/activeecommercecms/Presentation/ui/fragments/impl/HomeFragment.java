@@ -36,6 +36,7 @@ import com.activeitzone.activeecommercecms.Models.Brand;
 import com.activeitzone.activeecommercecms.Models.CartModel;
 import com.activeitzone.activeecommercecms.Models.Category;
 import com.activeitzone.activeecommercecms.Models.FlashDeal;
+import com.activeitzone.activeecommercecms.Models.PreferCatModel;
 import com.activeitzone.activeecommercecms.Models.Product;
 import com.activeitzone.activeecommercecms.Models.SliderImage;
 import com.activeitzone.activeecommercecms.Models.SubCategory;
@@ -43,7 +44,9 @@ import com.activeitzone.activeecommercecms.Network.response.AppSettingsResponse;
 import com.activeitzone.activeecommercecms.Network.response.AuctionBidResponse;
 import com.activeitzone.activeecommercecms.Network.response.AuthResponse;
 import com.activeitzone.activeecommercecms.Network.response.CartQuantityUpdateResponse;
+import com.activeitzone.activeecommercecms.Network.response.PreferDataResponse;
 import com.activeitzone.activeecommercecms.Network.response.ProductListingResponse;
+import com.activeitzone.activeecommercecms.Network.response.ProductResponse;
 import com.activeitzone.activeecommercecms.Network.response.RemoveCartResponse;
 import com.activeitzone.activeecommercecms.Presentation.presenters.CartPresenter;
 import com.activeitzone.activeecommercecms.Presentation.presenters.HomePresenter;
@@ -173,7 +176,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         auction_recyclerView.addItemDecoration(new LayoutMarginDecoration( 1,  AppConfig.convertDpToPx(getContext(), 10)));
         auction_recyclerView.setAdapter(adapter);
 
-
         bannerOne = v.findViewById(R.id.imageSlider);
         bannerTwo = v.findViewById(R.id.imageSlider_1);
         bannerThree = v.findViewById(R.id.imageSlider_2);
@@ -188,6 +190,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         homePresenter.getSliderImages();
         homePresenter.getTopCategories();
         homePresenter.getBanners();
+        homePresenter.getPreferCategories();
 
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,29 +382,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         recyclerView.addItemDecoration( new LayoutMarginDecoration( 3,  AppConfig.convertDpToPx(getContext(), 4)) );
         recyclerView.setAdapter(adapter);
 
-        shakeAnimation(featured_categories_text);
-
-        // this part of code will fetch data categoires wise for categories wise card
-        categoriesListPresenter = new HomePresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
-        categoriesListPresenter.getCategoriesZerothProduct(categories.get(0).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesFirstProduct(categories.get(1).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesSecondProduct(categories.get(2).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesThirdProduct(categories.get(3).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesbFourthProduct(categories.get(4).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesFiveProduct(categories.get(5).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesSixHomesProduct(categories.get(6).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesSevenProduct(categories.get(7).getLinks().getProducts());
-        categoriesListPresenter.getCategoriesEightFitnessProduct(categories.get(8).getLinks().getProducts());
-
-        firstProTxt.setText(categories.get(0).getName().toUpperCase());
-        secondProTxt.setText((categories.get(1).getName().toUpperCase()));
-        thirdProTxt.setText(categories.get(2).getName().toUpperCase());
-        fourthProTxt.setText(categories.get(3).getName().toUpperCase());
-        fifthProTxt.setText(categories.get(4).getName().toUpperCase());
-        sixthProTxt.setText(categories.get(5).getName().toUpperCase());
-        seventhProTxt.setText(categories.get(6).getName().toUpperCase());
-        eighthProTxt.setText(categories.get(7).getName().toUpperCase());
-        ninth_pro_txt.setText(categories.get(8).getName().toUpperCase());
 
     }
 
@@ -533,7 +513,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setZerothProduct(ProductListingResponse productListingResponse) {
+    public void setZerothProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.firt_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -542,7 +522,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFirstProduct(ProductListingResponse productListingResponse) {
+    public void setFirstProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.second_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -551,7 +531,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setSecondProduct(ProductListingResponse productListingResponse) {
+    public void setSecondProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.third_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -560,7 +540,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setThirdProduct(ProductListingResponse productListingResponse) {
+    public void setThirdProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.fourth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -569,7 +549,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFourthProduct(ProductListingResponse productListingResponse) {
+    public void setFourthProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.fifth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -578,7 +558,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFifthProduct(ProductListingResponse productListingResponse) {
+    public void setFifthProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.sixth_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -587,7 +567,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setSixthProduct(ProductListingResponse productListingResponse) {
+    public void setSixthProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.seven_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -596,7 +576,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setSeventhProduct(ProductListingResponse productListingResponse) {
+    public void setSeventhProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.eigth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -605,7 +585,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setEighthProduct(ProductListingResponse productListingResponse) {
+    public void setEighthProduct(ProductResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.ninth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -615,7 +595,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setNinthFitness(ProductListingResponse productListingResponse) {
+    public void setNinthFitness(ProductResponse productListingResponse) {
 //        RecyclerView recyclerView = v.findViewById(R.id.ninth_pro_recycler);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
 //        ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -624,7 +604,59 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setTenthProduct(ProductListingResponse productListingResponse) {
+    public void setTenthProduct(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void getAllPreferData(PreferDataResponse preferDataResponse) {
+        shakeAnimation(featured_categories_text);
+
+        List<PreferCatModel> categories = preferDataResponse.getData();
+
+//        for (PreferCatModel preference : categories) {
+//            homePresenter.getPreferCategoreisByIsShown(preference);
+//        }
+
+        categoriesListPresenter = new HomePresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
+
+        for(int i=0;i<categories.size();i++){
+            if (categories.get(i).whichPosition == 0){
+                categoriesListPresenter.getCategoriesZerothProduct(categories.get(0));
+            }else if(categories.get(i).whichPosition == 1){
+                categoriesListPresenter.getCategoriesFirstProduct(categories.get(1));
+            } else if(categories.get(i).whichPosition == 2){
+                categoriesListPresenter.getCategoriesSecondProduct(categories.get(2));
+            }
+        }
+
+
+
+//        categoriesListPresenter.getCategoriesThirdProduct(categories.get(0));
+//        categoriesListPresenter.getCategoriesbFourthProduct(categories.get(0));
+//        categoriesListPresenter.getCategoriesFiveProduct(categories.get(0));
+//        categoriesListPresenter.getCategoriesSixHomesProduct(categories.get(0));
+//        categoriesListPresenter.getCategoriesSevenProduct(categories.get(0));
+//        categoriesListPresenter.getCategoriesEightFitnessProduct(categories.get(0));
+
+
+//        firstProTxt.setText(categories.);
+//        secondProTxt.setText((categories.get(1).getName().toUpperCase()));
+//        thirdProTxt.setText(categories.get(2).getName().toUpperCase());
+//        fourthProTxt.setText(categories.get(3).getName().toUpperCase());
+//        fifthProTxt.setText(categories.get(4).getName().toUpperCase());
+//        sixthProTxt.setText(categories.get(5).getName().toUpperCase());
+//        seventhProTxt.setText(categories.get(6).getName().toUpperCase());
+//        eighthProTxt.setText(categories.get(7).getName().toUpperCase());
+//        ninth_pro_txt.setText(categories.get(8).getName().toUpperCase());
+
+
+    }
+
+    @Override
+    public void getPreferDataBySubShown(ProductResponse productListingResponse) {
+        List<Product> categories = productListingResponse.getData();
+        // this part of code will fetch data categoires wise for categories wise card
 
     }
 

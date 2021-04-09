@@ -2,6 +2,7 @@ package com.activeitzone.activeecommercecms.Presentation.presenters;
 
 import com.activeitzone.activeecommercecms.Models.Product;
 import com.activeitzone.activeecommercecms.Models.Shop;
+import com.activeitzone.activeecommercecms.Network.response.ProductResponse;
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.SellerShopView;
 import com.activeitzone.activeecommercecms.domain.executor.Executor;
 import com.activeitzone.activeecommercecms.domain.executor.MainThread;
@@ -49,6 +50,66 @@ public class ShopPresenter extends AbstractPresenter implements ShopInteractor.C
 
     @Override
     public void onShopLoadError() {
+
+    }
+
+    @Override
+    public void onProductDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductZeroDownload(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductFirstDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductSecondDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductThirdDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductFourthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductFifthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductSixthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductSeventhDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductEigthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductNinthDownloaded(ProductResponse productListingResponse) {
+
+    }
+
+    @Override
+    public void onProductTenthDownloaded(ProductResponse productListingResponse) {
 
     }
 
