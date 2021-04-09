@@ -622,10 +622,26 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
 
         for(int i=0;i<categories.size();i++){
             if (categories.get(i).whichPosition == 0){
+                if(categories.get(i).subShown.equals("0")){
+                    firstProTxt.setText(categories.get(0).catName);
+                }else {
+                    firstProTxt.setText(categories.get(0).subName);
+                }
+
                 categoriesListPresenter.getCategoriesZerothProduct(categories.get(0));
             }else if(categories.get(i).whichPosition == 1){
+                if(categories.get(i).subShown.equals("0")){
+                    secondProTxt.setText(categories.get(1).catName);
+                }else {
+                    secondProTxt.setText(categories.get(1).subName);
+                }
                 categoriesListPresenter.getCategoriesFirstProduct(categories.get(1));
             } else if(categories.get(i).whichPosition == 2){
+                if(categories.get(i).subShown.equals("0")){
+                    thirdProTxt.setText(categories.get(2).catName);
+                }else {
+                    thirdProTxt.setText(categories.get(2).subName);
+                }
                 categoriesListPresenter.getCategoriesSecondProduct(categories.get(2));
             }
         }
