@@ -62,6 +62,12 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
             <!-- Email Label -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -77,27 +83,27 @@
                     android:id="@+id/input_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress" />
+                    android:hint="Phone Number"
+                    android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password Label -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="#252524"
-                app:boxStrokeColor="#7CB342"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColorHint="#252524"-->
+<!--                app:boxStrokeColor="#7CB342"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginBottom="8dp">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/input_password"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Password"-->
+<!--                    android:inputType="textPassword" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
@@ -106,9 +112,10 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:background="#7CB342"
+                android:layout_gravity="center_horizontal"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:padding="12dp"
-                android:text="SIGN IN"
+                android:text="Get OTP"
                 android:textColor="@color/colorWhite" />
 
             <LinearLayout
@@ -168,23 +175,23 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/link_forgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="Forgot Password?"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+<!--            <TextView-->
+<!--                android:id="@+id/link_forgotPassword"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Forgot Password?"-->
+<!--                android:textColor="@color/colorPrimary"-->
+<!--                android:textSize="16sp" />-->
 
-            <TextView
-                android:id="@+id/link_signUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="No account yet? Create one"
-                android:textSize="16sp" />
+<!--            <TextView-->
+<!--                android:id="@+id/link_signUp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:text="No account yet? Create one"-->
+<!--                android:textSize="16sp" />-->
 
         </LinearLayout>
 

@@ -24,4 +24,5 @@
     <color name="green">#8BC34A</color>
     <color name="main_color_primary_fifty_alpha">#F8F7F7</color>
     <color name="main_color_category_seven_five_alpha">#F5F5F5</color>
+    <color name="shimmerBackground">#D6D6D6</color>
 </resources>

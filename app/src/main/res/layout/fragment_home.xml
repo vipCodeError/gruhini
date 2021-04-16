@@ -6,783 +6,1164 @@
     android:layout_height="match_parent"
     android:background="?android:colorBackground">
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp">
 
-            <RelativeLayout
-                android:id="@+id/search_lay"
-                android:layout_alignParentTop="true"
-                android:background="#F6F5F5"
+            <xyz.peridy.shimmerlayout.ShimmerLayout
+                android:id="@+id/shimmer_layout"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rounded_shape"
-                    android:text="Search your product ..."
-                    android:textAlignment="center"
-                     android:paddingTop="8dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_toStartOf="@id/mic_search"
-                    android:foregroundGravity="center_vertical|center_horizontal"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
-                <ImageView
-                    android:id="@+id/mic_search"
-                    android:background="@drawable/ic_action_mic"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"/>
-            </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/rounded_simmer" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/rounded_simmer" />
+
+                        <LinearLayout
+                            android:layout_margin="16dp"
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_margin="16dp"
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_margin="16dp"
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_margin="16dp"
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+                            <View
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/rounded_simmer" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </xyz.peridy.shimmerlayout.ShimmerLayout>
 
             <RelativeLayout
-                android:layout_below="@id/search_lay"
-                android:id="@+id/home_top_section"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded_image_slider"
+                android:id="@+id/root_layout"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <com.daimajia.slider.library.SliderLayout
-                    android:id="@+id/imageSlider"
-                    android:layout_margin="0dp"
+                <RelativeLayout
+                    android:id="@+id/search_lay"
+                    android:layout_alignParentTop="true"
+                    android:background="#F6F5F5"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_height="?actionBarSize">
+
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_shape"
+                        android:text="Search your product ..."
+                        android:textAlignment="center"
+                        android:paddingTop="8dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/mic_search"
+                        android:foregroundGravity="center_vertical|center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <ImageView
+                        android:id="@+id/mic_search"
+                        android:background="@drawable/ic_action_mic"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@id/search_lay"
+                    android:id="@+id/home_top_section"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.daimajia.slider.library.SliderLayout
+                        android:id="@+id/imageSlider"
+                        android:layout_margin="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/home_top_section">
+
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/featured_categories_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="TOP CATEGORIES"
+                            android:letterSpacing="0.1"
+                            android:translationX="-1000dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/featured_categories_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/top_categories"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/featured_categories_text"
+                            android:layout_margin="8dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:id="@+id/flash_deal_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/flash_deals_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="FLASH DEAL"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:translationX="-1000dp"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <!--                    <View-->
+                        <!--                        android:layout_width="75dp"-->
+                        <!--                        android:layout_height="3dp"-->
+                        <!--                        android:layout_alignBottom="@id/flash_deals_text"-->
+                        <!--                        android:layout_alignParentRight="true"-->
+                        <!--                        android:layout_marginRight="10dp"-->
+                        <!--                        android:layout_marginBottom="10dp"-->
+                        <!--                        android:background="@color/colorPrimary" />-->
+
+                        <cn.iwgang.countdownview.CountdownView
+                            android:id="@+id/countdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/flash_deals_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="15dp"
+                            app:isHideTimeBackground="false"
+                            app:timeBgColor="@color/colorPrimaryLight"
+                            app:isShowDay="true"
+                            app:isShowHour="true"
+                            app:isShowMinute="true"
+                            app:isShowSecond="true"
+                            app:timeTextColor="@android:color/white"
+                            app:timeTextSize="16sp"
+                            app:isTimeTextBold="true"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/flash_deals"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/flash_deals_text"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:id="@+id/todays_deal_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/todays_deals_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="TODAY'S DEAL"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/todays_deals"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/todays_deals_text"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_image_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/imageSlider_2"
+                            android:layout_margin="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/featured_products_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="FEATURED PRODUCTS"
+                            android:letterSpacing="0.1"
+                            android:translationX="-1000dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/featured_products_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/featured_products"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/featured_products_text"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    First product           -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/first_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/first_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/firt_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/first_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    Second pro           -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/second_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/second_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/second_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/second_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    Thrid Product            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/third_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/third_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/third_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/third_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--   Fourth pro txt            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/fourth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/fourth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/fourth_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/fourth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    fifth pro           -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/fifth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/fifth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/fifth_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/fifth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+
+                    <!--    sixth pro           -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/sixth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/sixth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/sixth_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/sixth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    Seven pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/seven_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/seven_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/seven_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/seven_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    Eigth            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/eigth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/eigth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/eigth_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/eigth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+
+                    <!--    Ninth pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/ninth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:id="@+id/ninth_pro_view_all"
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/ninth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ninth_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ninth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    Tenth pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tenth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/tenth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tenth_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tenth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    eleventh pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/eleventh_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/eleventh_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/eleventh_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/eleventh_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    twelth pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/twelth_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/twelth_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/twelth_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/twelth_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <!--    thirteen pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/thirteen_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/thirteen_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/thirteen_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/thirteen_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+
+                    <!--    fourthteen pro            -->
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/fourthteen_pro_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:translationX="-1000dp"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/fourthteen_pro_txt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/fourthteen_pro_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/fourthteen_pro_txt"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/bannerr_4"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_image_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/imageSlider_1"
+                            android:layout_margin="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/best_selling_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="BEST SELLING"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/best_selling_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/best_selling"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/best_selling_text"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@id/todays_deal_section"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_image_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/imageSlider_3"
+                            android:layout_margin="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_white_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/popular_brands_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="OUR POPULAR BRANDS"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/popular_brands_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/popular_brads"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/popular_brands_text"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/auction_product_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/auction_products_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="AUCTION PRODUCTS"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/auction_products_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/colorPrimary" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/auction_products"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/auction_products_text"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
             </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_below="@id/home_top_section">
-
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/featured_categories_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="TOP CATEGORIES"
-                        android:letterSpacing="0.1"
-                        android:translationX="-1000dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/featured_categories_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/top_categories"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/featured_categories_text"
-                        android:layout_margin="8dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:id="@+id/flash_deal_section"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/flash_deals_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="FLASH DEAL"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:translationX="-1000dp"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-<!--                    <View-->
-<!--                        android:layout_width="75dp"-->
-<!--                        android:layout_height="3dp"-->
-<!--                        android:layout_alignBottom="@id/flash_deals_text"-->
-<!--                        android:layout_alignParentRight="true"-->
-<!--                        android:layout_marginRight="10dp"-->
-<!--                        android:layout_marginBottom="10dp"-->
-<!--                        android:background="@color/colorPrimary" />-->
-
-                    <cn.iwgang.countdownview.CountdownView
-                        android:id="@+id/countdown"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/flash_deals_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="15dp"
-                        app:isHideTimeBackground="false"
-                        app:timeBgColor="@color/colorPrimaryLight"
-                        app:isShowDay="true"
-                        app:isShowHour="true"
-                        app:isShowMinute="true"
-                        app:isShowSecond="true"
-                        app:timeTextColor="@android:color/white"
-                        app:timeTextSize="16sp"
-                        app:isTimeTextBold="true"/>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/flash_deals"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/flash_deals_text"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:id="@+id/todays_deal_section"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/todays_deals_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="TODAY'S DEAL"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/todays_deals"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/todays_deals_text"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rounded_image_slider"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.daimajia.slider.library.SliderLayout
-                        android:id="@+id/imageSlider_2"
-                        android:layout_margin="0dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/featured_products_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="FEATURED PRODUCTS"
-                        android:letterSpacing="0.1"
-                        android:translationX="-1000dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/featured_products_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/featured_products"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/featured_products_text"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    First product           -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/first_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/first_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/firt_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/first_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    Second pro           -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/second_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/second_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/second_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/second_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    Thrid Product            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/third_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/third_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/third_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/third_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--   Fourth pro txt            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/fourth_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/fourth_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/fourth_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/fourth_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    fifth pro           -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/fifth_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/fifth_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/fifth_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/fifth_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-
-                <!--    sixth pro           -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/sixth_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/sixth_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/sixth_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/sixth_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    Seven pro            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/seven_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/seven_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/seven_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/seven_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <!--    Eigth            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/eigth_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/eigth_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/eigth_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/eigth_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-
-                <!--    Ninth pro            -->
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/ninth_pro_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:translationX="-1000dp"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/ninth_pro_txt"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/ninth_pro_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/ninth_pro_txt"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/bannerr_4"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rounded_image_slider"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.daimajia.slider.library.SliderLayout
-                        android:id="@+id/imageSlider_1"
-                        android:layout_margin="0dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/best_selling_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="BEST SELLING"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/best_selling_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/best_selling"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/best_selling_text"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_below="@id/todays_deal_section"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rounded_image_slider"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <com.daimajia.slider.library.SliderLayout
-                    android:id="@+id/imageSlider_3"
-                    android:layout_margin="0dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/rounded_white_card"
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/popular_brands_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="OUR POPULAR BRANDS"
-                        android:letterSpacing="0.1"
-                        android:textStyle="bold"
-                        android:textColor="@color/card_title"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/popular_brands_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#3F51B5" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/popular_brads"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/popular_brands_text"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/auction_product_section"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/auction_products_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="AUCTION PRODUCTS"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="75dp"
-                        android:layout_height="3dp"
-                        android:layout_alignBottom="@id/auction_products_text"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/colorPrimary" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/auction_products"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/auction_products_text"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
-
-                    </androidx.recyclerview.widget.RecyclerView>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </RelativeLayout>
+        </LinearLayout>
 
 </ScrollView>

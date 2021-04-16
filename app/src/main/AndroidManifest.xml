@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.activeitzone.activeecommercecms">
+    package="com.syscription.firstchoicemart">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -44,12 +44,12 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Presentation.ui.activities.impl.ui.AddresssPicupActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ui.AddresssPicupActivity"
             android:label="@string/title_activity_addresss_picup"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             />
         <activity
-            android:name=".Presentation.ui.activities.impl.SplashActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.SplashActivity"
             android:label="@string/title_activity_drawer_new"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -58,10 +58,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Presentation.ui.activities.impl.ProductDescriptionActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.ResetPasswordActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.MyBidsActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.DrawerActivityNew"
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ProductDescriptionActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ResetPasswordActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.MyBidsActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.DrawerActivityNew"
             android:theme="@style/AppTheme.NoActionBar">
 
             <!-- <intent-filter> -->
@@ -72,39 +72,41 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name=".Presentation.ui.activities.impl.ui.OrderPlacedMessage"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ui.OrderPlacedMessage"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Presentation.ui.activities.impl.ui.RazorPayActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.ui.ProductSearchActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.ProductReviewActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.AccountInfoActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.StripePaymentActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.SellerShopActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ui.RazorPayActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ui.ProductSearchActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ProductReviewActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.AccountInfoActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.StripePaymentActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.SellerShopActivity" />
         <activity
-            android:name=".Presentation.ui.activities.impl.PaymentActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.PaymentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Presentation.ui.activities.impl.RegisterActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.RegisterActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
-            android:name=".Presentation.ui.activities.impl.ShippingActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ShippingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Presentation.ui.activities.impl.PurchaseHistoryDetailsActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.PurchaseHistoryDetailsActivity" />
         <activity
-            android:name=".Presentation.ui.activities.impl.BuyingOptionsActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.BuyingOptionsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Presentation.ui.activities.impl.PolicyViewActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.PolicyViewActivity" />
         <activity
-            android:name=".Presentation.ui.activities.impl.ProductDetailsActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ProductDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Presentation.ui.activities.impl.SubCategoryActivity" />
-        <activity android:name=".Presentation.ui.activities.impl.ProductListingActivity" /> <!-- <activity -->
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.SubCategoryActivity" />
+        <activity android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.ProductListingActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.OtpVerficationActivity"/>
+        <!-- <activity -->
         <!-- android:name=".Presentation.ui.activities.impl.MainActivity" -->
         <!-- android:label="@string/app_name" -->
         <!-- android:screenOrientation="portrait" -->
         <!-- tools:ignore="LockedOrientationActivity" /> -->
         <activity
-            android:name=".Presentation.ui.activities.impl.LoginActivity"
+            android:name="com.syscription.firstchoicemart.Presentation.ui.activities.impl.LoginActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
@@ -141,7 +143,7 @@
         </activity>
 
         <service
-            android:name=".config.FireBaseNotification"
+            android:name="com.syscription.firstchoicemart.config.FireBaseNotification"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -157,7 +159,7 @@
             android:resource="@color/colorAccent" />
 
         <service
-            android:name=".Utils.FetchAddressIntentService" />
+            android:name="com.syscription.firstchoicemart.Utils.FetchAddressIntentService" />
     </application>
 
 </manifest>

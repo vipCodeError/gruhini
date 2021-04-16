@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:969007077025:android:5fff11b002578ff27842e0",
+        "mobilesdk_app_id": "1:969007077025:android:1465a73f651e92dd7842e0",
         "android_client_info": {
-          "package_name": "com.syscryption.firstchoicemart"
+          "package_name": "com.syscription.firstchoicemart"
         }
       },
       "oauth_client": [

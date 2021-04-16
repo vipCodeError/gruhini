@@ -14,7 +14,9 @@
         <item name="cookieTitleSize">24sp</item>
         <item name="cookieMessageSize">16sp</item>
         <item name="cookieActionSize">18sp</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
     </style>
+
 
     <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>

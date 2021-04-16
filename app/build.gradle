@@ -6,7 +6,7 @@ def lottieVersion = "3.4.0"
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId 'com.syscryption.firstchoicemart'
+        applicationId 'com.syscription.firstchoicemart'
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 4
@@ -57,6 +57,7 @@ dependencies {
     //firebase
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
     implementation platform('com.google.firebase:firebase-bom:26.6.0')
     //Third Party Library
     implementation 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
@@ -129,4 +130,9 @@ dependencies {
     //bottom card
     implementation 'com.sothree.slidinguppanel:library:3.4.0'
 
+    //shimmer
+    implementation 'xyz.peridy.shimmer:shimmerlayout:1.1'
+
+    //otpview
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
 }
