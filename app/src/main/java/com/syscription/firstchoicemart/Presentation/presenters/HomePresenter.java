@@ -30,6 +30,7 @@ import com.syscription.firstchoicemart.domain.interactors.ProductInteractor;
 import com.syscription.firstchoicemart.domain.interactors.SliderInteractor;
 import com.syscription.firstchoicemart.domain.interactors.TodaysDealInteractor;
 import com.syscription.firstchoicemart.domain.interactors.TopCategoryInteractor;
+import com.syscription.firstchoicemart.domain.interactors.TopSecondCategoryInteractor;
 import com.syscription.firstchoicemart.domain.interactors.impl.AppSettingsInteractorImpl;
 import com.syscription.firstchoicemart.domain.interactors.impl.AuctionBidInteractorImpl;
 import com.syscription.firstchoicemart.domain.interactors.impl.AuctionProductInteractorImpl;
@@ -45,10 +46,11 @@ import com.syscription.firstchoicemart.domain.interactors.impl.SliderInteractorI
 import com.syscription.firstchoicemart.domain.interactors.impl.TodaysDealInteractorImpl;
 import com.syscription.firstchoicemart.domain.interactors.impl.TopCategoriesInteractorImpl;
 import com.google.gson.JsonObject;
+import com.syscription.firstchoicemart.domain.interactors.impl.TopCategoriesSecondInteractorImpl;
 
 import java.util.List;
 
-public class HomePresenter extends AbstractPresenter implements PreferCatIsShownInteractor.CallBack, PreferCatInteractor.CallBack, ProductInteractor.CallBack, AppSettingsInteractor.CallBack, SliderInteractor.CallBack, HomeCategoriesInteractor.CallBack, TodaysDealInteractor.CallBack, FlashDealInteractor.CallBack, BestSellingInteractor.CallBack, BannerInteractor.CallBack, FeaturedProductInteractor.CallBack, BrandInteractor.CallBack, TopCategoryInteractor.CallBack, AuctionProductInteractor.CallBack, AuctionBidInteractor.CallBack {
+public class HomePresenter extends AbstractPresenter implements TopSecondCategoryInteractor.CallBack, PreferCatIsShownInteractor.CallBack, PreferCatInteractor.CallBack, ProductInteractor.CallBack, AppSettingsInteractor.CallBack, SliderInteractor.CallBack, HomeCategoriesInteractor.CallBack, TodaysDealInteractor.CallBack, FlashDealInteractor.CallBack, BestSellingInteractor.CallBack, BannerInteractor.CallBack, FeaturedProductInteractor.CallBack, BrandInteractor.CallBack, TopCategoryInteractor.CallBack, AuctionProductInteractor.CallBack, AuctionBidInteractor.CallBack {
     HomeView homeView;
 
 
@@ -91,6 +93,10 @@ public class HomePresenter extends AbstractPresenter implements PreferCatIsShown
 
     public void getTopCategories() {
         new TopCategoriesInteractorImpl(mExecutor, mMainThread, this).execute();
+    }
+
+    public void getTopSecondCategories() {
+        new TopCategoriesSecondInteractorImpl(mExecutor, mMainThread, this).execute();
     }
 
     public void getPopularbrands() {
@@ -453,6 +459,16 @@ public class HomePresenter extends AbstractPresenter implements PreferCatIsShown
 
     @Override
     public void onPreferCatItemAddedError() {
+
+    }
+
+    @Override
+    public void onTopSecondCategoriesDownloaded(List<Category> categories) {
+        homeView.setTopSecondCategories(categories);
+    }
+
+    @Override
+    public void onTopSecondCategoriesDownloadError() {
 
     }
 }

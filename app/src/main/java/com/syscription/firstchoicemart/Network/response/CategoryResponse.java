@@ -17,6 +17,7 @@ public class CategoryResponse {
     @Expose
     private Integer status;
 
+
     public List<Category> getData() {
         return data;
     }
@@ -41,3 +42,4 @@ public class CategoryResponse {
         this.status = status;
     }
 }
+

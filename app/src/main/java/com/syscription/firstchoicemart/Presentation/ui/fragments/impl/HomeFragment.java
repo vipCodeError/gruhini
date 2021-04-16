@@ -111,7 +111,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
             thirdProTxt, fourthProTxt, fifthProTxt,
             sixthProTxt, seventhProTxt, ninth_pro_txt, tenth_pro_txt, eleventh_pro_txt,
             twelth_pro_txt, thirteen_pro_txt, fourtheen_pro_txt, books_txt,
-            eighthProTxt,best_selling_text, todayDealTxt;
+            eighthProTxt,best_selling_text, todayDealTxt, sec_featured_categories_text;
 
     private ScrollView scrollContainer;
 
@@ -136,6 +136,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         flash_deals_text = v.findViewById(R.id.flash_deals_text);
         featured_categories_text = v.findViewById(R.id.featured_categories_text);
         featured_products_text = v.findViewById(R.id.featured_products_text);
+        sec_featured_categories_text = v.findViewById(R.id.sec_featured_categories_text);
 
         firstProTxt = v.findViewById(R.id.first_pro_txt);
         secondProTxt = v.findViewById(R.id.second_pro_txt);
@@ -188,6 +189,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         homePresenter.getAppSettings();
         homePresenter.getSliderImages();
         homePresenter.getTopCategories();
+        homePresenter.getTopSecondCategories();
         homePresenter.getBanners();
         homePresenter.getPreferCategories();
 
@@ -826,11 +828,23 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
+    public void setTopSecondCategories(List<Category> categories) {
+        RecyclerView recyclerView = v.findViewById(R.id.top_sec_categories);
+        GridLayoutManager horizontalLayoutManager
+                = new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(horizontalLayoutManager);
+        TopCategoryAdapter adapter = new TopCategoryAdapter(getActivity(), categories, HomeFragment.this);
+        recyclerView.addItemDecoration( new LayoutMarginDecoration( 3,  AppConfig.convertDpToPx(getContext(), 4)) );
+        recyclerView.setAdapter(adapter);
+        shimmerLayout.setVisibility(View.GONE);
+        rootLayout.setVisibility(View.VISIBLE);
+    }
+
+    @Override
     public void setCartItems(List<CartModel> cartItems) {
         if (cartItems != null){
             ((DrawerActivityNew) requireActivity()).setCartCountListener.setCartCount(cartItems.size());
         }
-
     }
 
     @Override

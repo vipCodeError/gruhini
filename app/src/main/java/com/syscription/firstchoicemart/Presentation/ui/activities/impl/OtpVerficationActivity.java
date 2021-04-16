@@ -113,18 +113,19 @@ public class OtpVerficationActivity extends AppCompatActivity implements LoginVi
                                 .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                                 .build();
                 PhoneAuthProvider.verifyPhoneNumber(options);
-
-
             }
-
         }
 
 
         otpView.setOtpCompletionListener(new OnOtpCompletionListener() {
             @Override
             public void onOtpCompleted(String otp) {
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, otp);
-                verifyPhoneNumber(credential);
+                if(!mVerificationId.isEmpty()){
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, otp);
+                    verifyPhoneNumber(credential);
+                }else {
+                    Toast.makeText(OtpVerficationActivity.this, "Wait for otp...", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

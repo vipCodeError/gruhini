@@ -13,6 +13,7 @@
 
             <xyz.peridy.shimmerlayout.ShimmerLayout
                 android:id="@+id/shimmer_layout"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -174,7 +175,7 @@
 
             <RelativeLayout
                 android:id="@+id/root_layout"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <RelativeLayout
@@ -376,6 +377,45 @@
 
                     </RelativeLayout>
 
+                    <RelativeLayout
+                        android:layout_margin="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:padding="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/sec_featured_categories_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="TOP CATEGORIES"
+                            android:letterSpacing="0.1"
+                            android:textStyle="bold"
+                            android:textColor="@color/card_title"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="75dp"
+                            android:layout_height="3dp"
+                            android:layout_alignBottom="@id/sec_featured_categories_text"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#3F51B5" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/top_sec_categories"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/sec_featured_categories_text"
+                            android:layout_margin="8dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
                     <RelativeLayout
                         android:layout_margin="8dp"
                         android:background="@drawable/rounded_card"

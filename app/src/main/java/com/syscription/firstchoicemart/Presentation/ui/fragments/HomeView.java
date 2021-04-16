@@ -72,4 +72,6 @@ public interface HomeView {
     void getAllPreferData(PreferDataResponse preferDataResponse);
 
     void getPreferDataBySubShown(ProductResponse productListingResponse);
+
+    void setTopSecondCategories(List<Category> categories);
 }

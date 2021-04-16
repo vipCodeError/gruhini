@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 def dbflow_version = "5.0.0-alpha1"
 def lottieVersion = "3.4.0"
 
@@ -58,6 +59,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-crashlytics'
+
     implementation platform('com.google.firebase:firebase-bom:26.6.0')
     //Third Party Library
     implementation 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
