@@ -233,7 +233,7 @@ public class DrawerActivityNew extends AppCompatActivity implements AccountView,
             navigationLogout.setVisibility(View.VISIBLE);
             navigationView.getHeaderView(0).findViewById(R.id.imageView).setVisibility(View.VISIBLE);
             welcomeTxt.setVisibility(View.VISIBLE);
-            welcomeTxt.setText("Hey " + authResponse.getUser().getName());
+            welcomeTxt.setText("Hey " + authResponse.getUser().getPhone());
             preferenceBtn.setVisibility(View.VISIBLE);
         }
 

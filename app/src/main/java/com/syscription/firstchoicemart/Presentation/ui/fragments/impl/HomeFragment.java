@@ -474,7 +474,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         total_bids.setText(auctionProduct.getBidsCount()+" Bids");
         name.setText(auctionProduct.getName());
 
-
         dialog = new BottomSheetDialog(getContext());
         dialog.setContentView(view);
         dialog.show();
