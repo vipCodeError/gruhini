@@ -74,9 +74,11 @@ public class CategoriesFragment extends Fragment implements CategoryView, AllCat
 
     @Override
     public void onCategoryClick(Category category) {
-        Intent intent = new Intent(getContext(), SubCategoryActivity.class);
-        intent.putExtra("category", category);
-        startActivity(intent);
+        if (category != null){
+            Intent intent = new Intent(getContext(), SubCategoryActivity.class);
+            intent.putExtra("category", category);
+            startActivity(intent);
+        }
     }
 
     @Override

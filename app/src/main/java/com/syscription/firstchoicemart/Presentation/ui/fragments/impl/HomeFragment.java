@@ -37,6 +37,7 @@ import com.syscription.firstchoicemart.Network.response.AuctionBidResponse;
 import com.syscription.firstchoicemart.Network.response.AuthResponse;
 import com.syscription.firstchoicemart.Network.response.CartQuantityUpdateResponse;
 import com.syscription.firstchoicemart.Network.response.PreferDataResponse;
+import com.syscription.firstchoicemart.Network.response.ProductListingResponse;
 import com.syscription.firstchoicemart.Network.response.ProductResponse;
 import com.syscription.firstchoicemart.Network.response.RemoveCartResponse;
 import com.syscription.firstchoicemart.Presentation.presenters.CartPresenter;
@@ -53,6 +54,7 @@ import com.syscription.firstchoicemart.Presentation.ui.adapters.FeaturedProductA
 import com.syscription.firstchoicemart.Presentation.ui.adapters.ProductListtingHomeAdapter;
 import com.syscription.firstchoicemart.Presentation.ui.adapters.TodaysDealAdapter;
 import com.syscription.firstchoicemart.Presentation.ui.adapters.TopCategoryAdapter;
+import com.syscription.firstchoicemart.Presentation.ui.adapters.TopSecondCategoryAdapter;
 import com.syscription.firstchoicemart.Presentation.ui.fragments.CartView;
 import com.syscription.firstchoicemart.Presentation.ui.fragments.HomeView;
 import com.syscription.firstchoicemart.Presentation.ui.listeners.AuctionClickListener;
@@ -73,6 +75,7 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.JsonObject;
 import com.kingfisher.easyviewindicator.AnyViewIndicator;
+import com.syscription.firstchoicemart.domain.interactors.TopSecondCategoryInteractor;
 import com.thekhaeng.recyclerviewmargin.LayoutMarginDecoration;
 
 import java.util.ArrayList;
@@ -136,7 +139,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         flash_deals_text = v.findViewById(R.id.flash_deals_text);
         featured_categories_text = v.findViewById(R.id.featured_categories_text);
         featured_products_text = v.findViewById(R.id.featured_products_text);
-        sec_featured_categories_text = v.findViewById(R.id.sec_featured_categories_text);
+        // sec_featured_categories_text = v.findViewById(R.id.sec_featured_categories_text);
 
         firstProTxt = v.findViewById(R.id.first_pro_txt);
         secondProTxt = v.findViewById(R.id.second_pro_txt);
@@ -191,7 +194,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
         homePresenter.getTopCategories();
         homePresenter.getTopSecondCategories();
         homePresenter.getBanners();
-        homePresenter.getPreferCategories();
 
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -515,7 +517,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setZerothProduct(ProductResponse productListingResponse) {
+    public void setZerothProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.firt_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -524,7 +526,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFirstProduct(ProductResponse productListingResponse) {
+    public void setFirstProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.second_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -533,7 +535,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setSecondProduct(ProductResponse productListingResponse) {
+    public void setSecondProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.third_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -542,7 +544,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setThirdProduct(ProductResponse productListingResponse) {
+    public void setThirdProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.fourth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -551,7 +553,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFourthProduct(ProductResponse productListingResponse) {
+    public void setFourthProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.fifth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -560,7 +562,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFifthProduct(ProductResponse productListingResponse) {
+    public void setFifthProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.sixth_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -569,7 +571,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setSixthProduct(ProductResponse productListingResponse) {
+    public void setSixthProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.seven_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -578,7 +580,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setSeventhProduct(ProductResponse productListingResponse) {
+    public void setSeventhProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.eigth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -587,7 +589,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setEighthProduct(ProductResponse productListingResponse) {
+    public void setEighthProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.ninth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -597,7 +599,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setNinthFitness(ProductResponse productListingResponse) {
+    public void setNinthFitness(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.ninth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -607,7 +609,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setTenthProduct(ProductResponse productListingResponse) {
+    public void setTenthProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.tenth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -616,7 +618,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setEleventhProduct(ProductResponse productListingResponse) {
+    public void setEleventhProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.eleventh_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -625,7 +627,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setTwelthProduct(ProductResponse productListingResponse) {
+    public void setTwelthProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.twelth_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -634,7 +636,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setThirteenProduct(ProductResponse productListingResponse) {
+    public void setThirteenProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.thirteen_pro_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -643,7 +645,7 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     }
 
     @Override
-    public void setFourteenProduct(ProductResponse productListingResponse) {
+    public void setFourteenProduct(ProductListingResponse productListingResponse) {
         RecyclerView recyclerView = v.findViewById(R.id.fourthteen_pro_txt);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false));
         ProductListtingHomeAdapter adapter = new ProductListtingHomeAdapter(getActivity(), productListingResponse.getData(), this);
@@ -654,147 +656,6 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
     @Override
     public void getAllPreferData(PreferDataResponse preferDataResponse) {
         shakeAnimation(featured_categories_text);
-
-        List<PreferCatModel> categories = preferDataResponse.getData();
-
-//        for (PreferCatModel preference : categories) {
-//            homePresenter.getPreferCategoreisByIsShown(preference);
-//        }
-
-        categoriesListPresenter = new HomePresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
-
-        for(int i=0;i<categories.size();i++){
-            if (categories.get(i).whichPosition == 0){
-                if(categories.get(i).subShown.equals("0")){
-                    firstProTxt.setText(categories.get(i).catName);
-                }else {
-                    firstProTxt.setText(categories.get(i).subName);
-                }
-
-                categoriesListPresenter.getCategoriesZerothProduct(categories.get(i));
-            }else if(categories.get(i).whichPosition == 1){
-                if(categories.get(i).subShown.equals("0")){
-                    secondProTxt.setText(categories.get(i).catName);
-                }else {
-                    secondProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesFirstProduct(categories.get(i));
-            } else if(categories.get(i).whichPosition == 2){
-                if(categories.get(i).subShown.equals("0")){
-                    thirdProTxt.setText(categories.get(i).catName);
-                }else {
-                    thirdProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesSecondProduct(categories.get(i));
-            }
-            else if(categories.get(i).whichPosition == 3){
-                if(categories.get(i).subShown.equals("0")){
-                    fourthProTxt.setText(categories.get(i).catName);
-                }else {
-                    fourthProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesThirdProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 4){
-                if(categories.get(i).subShown.equals("0")){
-                    fifthProTxt.setText(categories.get(i).catName);
-                }else {
-                    fifthProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesbFourthProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 5){
-                if(categories.get(i).subShown.equals("0")){
-                    sixthProTxt.setText(categories.get(i).catName);
-                }else {
-                    sixthProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesFiveProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 6){
-                if(categories.get(i).subShown.equals("0")){
-                    seventhProTxt.setText(categories.get(i).catName);
-                }else {
-                    seventhProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesSixHomesProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 7){
-                if(categories.get(i).subShown.equals("0")){
-                    eighthProTxt.setText(categories.get(i).catName);
-                }else {
-                    eighthProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesSevenProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 8){
-                if(categories.get(i).subShown.equals("0")){
-                    eighthProTxt.setText(categories.get(i).catName);
-                }else {
-                    eighthProTxt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesEightFitnessProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 9){
-                if(categories.get(i).subShown.equals("0")){
-                    ninth_pro_txt.setText(categories.get(i).catName);
-                }else {
-                    ninth_pro_txt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesNighthProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 10){
-                if(categories.get(i).subShown.equals("0")){
-                    tenth_pro_txt.setText(categories.get(i).catName);
-                }else {
-                    tenth_pro_txt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesTenthProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 11){
-                if(categories.get(i).subShown.equals("0")){
-                    eleventh_pro_txt.setText(categories.get(i).catName);
-                }else {
-                    eleventh_pro_txt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesEleventhProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 12){
-                if(categories.get(i).subShown.equals("0")){
-                    twelth_pro_txt.setText(categories.get(i).catName);
-                }else {
-                    twelth_pro_txt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesTwelthProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 13){
-                if(categories.get(i).subShown.equals("0")){
-                    thirteen_pro_txt.setText(categories.get(i).catName);
-                }else {
-                    thirteen_pro_txt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesThirteenProduct(categories.get(i));
-            }
-
-            else if(categories.get(i).whichPosition == 14){
-                if(categories.get(i).subShown.equals("0")){
-                    fourtheen_pro_txt.setText(categories.get(i).catName);
-                }else {
-                    fourtheen_pro_txt.setText(categories.get(i).subName);
-                }
-                categoriesListPresenter.getCategoriesFourteenProduct(categories.get(i));
-            }
-        }
 
 
 
@@ -828,15 +689,95 @@ public class HomeFragment extends Fragment implements CartView, HomeView, Catego
 
     @Override
     public void setTopSecondCategories(List<Category> categories) {
-        RecyclerView recyclerView = v.findViewById(R.id.top_sec_categories);
-        GridLayoutManager horizontalLayoutManager
-                = new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(horizontalLayoutManager);
-        TopCategoryAdapter adapter = new TopCategoryAdapter(getActivity(), categories, HomeFragment.this);
-        recyclerView.addItemDecoration( new LayoutMarginDecoration( 3,  AppConfig.convertDpToPx(getContext(), 4)) );
-        recyclerView.setAdapter(adapter);
-        shimmerLayout.setVisibility(View.GONE);
-        rootLayout.setVisibility(View.VISIBLE);
+//        RecyclerView recyclerView = v.findViewById(R.id.top_sec_categories);
+//        GridLayoutManager horizontalLayoutManager
+//                = new GridLayoutManager(getActivity(), 2,GridLayoutManager.HORIZONTAL, false);
+//        recyclerView.setLayoutManager(horizontalLayoutManager);
+//        TopSecondCategoryAdapter adapter = new TopSecondCategoryAdapter(getActivity(), categories, HomeFragment.this);
+//        recyclerView.addItemDecoration( new LayoutMarginDecoration( 3,  AppConfig.convertDpToPx(getContext(), 4)) );
+//        recyclerView.setAdapter(adapter);
+//        shimmerLayout.setVisibility(View.GONE);
+//        rootLayout.setVisibility(View.VISIBLE);
+
+
+//        for (PreferCatModel preference : categories) {
+//            homePresenter.getPreferCategoreisByIsShown(preference);
+//        }
+
+        categoriesListPresenter = new HomePresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
+
+        for(int i=0;i<categories.size();i++){
+            if (i == 0){
+                firstProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesZerothProduct(categories.get(i).getLinks().getProducts());
+
+            }else if(i == 1){
+                secondProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesFirstProduct(categories.get(i).getLinks().getProducts());
+            } else if(i == 2){
+                thirdProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesSecondProduct(categories.get(i).getLinks().getProducts());
+            }
+            else if(i == 3){
+                fourthProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesThirdProduct(categories.get(i).getLinks().getProducts());
+            }
+            else if(i == 4){
+                fifthProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesbFourthProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 5){
+                sixthProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesFiveProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 6){
+                seventhProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesSixHomesProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 7){
+                eighthProTxt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesSevenProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 8){
+                eighthProTxt.setText(categories.get(i).getName());
+
+                categoriesListPresenter.getCategoriesEightFitnessProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 9){
+                ninth_pro_txt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesNighthProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 10){
+                tenth_pro_txt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesTenthProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 11){
+                eleventh_pro_txt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesEleventhProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 12){
+                twelth_pro_txt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesTwelthProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 13){
+                thirteen_pro_txt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesThirteenProduct(categories.get(i).getLinks().getProducts());
+            }
+
+            else if(i == 14){
+                fourtheen_pro_txt.setText(categories.get(i).getName());
+                categoriesListPresenter.getCategoriesFourteenProduct(categories.get(i).getLinks().getProducts());
+            }
+        }
     }
 
     @Override

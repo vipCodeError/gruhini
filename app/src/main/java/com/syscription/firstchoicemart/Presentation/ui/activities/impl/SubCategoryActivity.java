@@ -29,8 +29,8 @@ public class SubCategoryActivity extends BaseActivity implements SubCategoryView
 
         Category category = (Category) getIntent().getSerializableExtra("category");
 
-        initializeActionBar();
-        setTitle(category.getName());
+        //initializeActionBar();
+        //setTitle(category.getName());
 
         SubSubCategoryPresenter subSubCategoryPresenter = new SubSubCategoryPresenter(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), this);
         subSubCategoryPresenter.getSubSubCategories(category.getLinks().getSubCategories());

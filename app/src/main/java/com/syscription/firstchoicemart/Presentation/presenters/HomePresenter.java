@@ -11,6 +11,7 @@ import com.syscription.firstchoicemart.Models.SliderImage;
 import com.syscription.firstchoicemart.Network.response.AppSettingsResponse;
 import com.syscription.firstchoicemart.Network.response.AuctionBidResponse;
 import com.syscription.firstchoicemart.Network.response.PreferDataResponse;
+import com.syscription.firstchoicemart.Network.response.ProductListingResponse;
 import com.syscription.firstchoicemart.Network.response.ProductResponse;
 import com.syscription.firstchoicemart.Presentation.ui.fragments.HomeView;
 import com.syscription.firstchoicemart.domain.executor.Executor;
@@ -27,6 +28,8 @@ import com.syscription.firstchoicemart.domain.interactors.HomeCategoriesInteract
 import com.syscription.firstchoicemart.domain.interactors.PreferCatInteractor;
 import com.syscription.firstchoicemart.domain.interactors.PreferCatIsShownInteractor;
 import com.syscription.firstchoicemart.domain.interactors.ProductInteractor;
+import com.syscription.firstchoicemart.domain.interactors.ProductListingHomeInteractorImpl;
+import com.syscription.firstchoicemart.domain.interactors.ProductListingInteractor;
 import com.syscription.firstchoicemart.domain.interactors.SliderInteractor;
 import com.syscription.firstchoicemart.domain.interactors.TodaysDealInteractor;
 import com.syscription.firstchoicemart.domain.interactors.TopCategoryInteractor;
@@ -50,7 +53,7 @@ import com.syscription.firstchoicemart.domain.interactors.impl.TopCategoriesSeco
 
 import java.util.List;
 
-public class HomePresenter extends AbstractPresenter implements TopSecondCategoryInteractor.CallBack, PreferCatIsShownInteractor.CallBack, PreferCatInteractor.CallBack, ProductInteractor.CallBack, AppSettingsInteractor.CallBack, SliderInteractor.CallBack, HomeCategoriesInteractor.CallBack, TodaysDealInteractor.CallBack, FlashDealInteractor.CallBack, BestSellingInteractor.CallBack, BannerInteractor.CallBack, FeaturedProductInteractor.CallBack, BrandInteractor.CallBack, TopCategoryInteractor.CallBack, AuctionProductInteractor.CallBack, AuctionBidInteractor.CallBack {
+public class HomePresenter extends AbstractPresenter implements ProductListingInteractor.CallBack, TopSecondCategoryInteractor.CallBack,  AppSettingsInteractor.CallBack, SliderInteractor.CallBack, HomeCategoriesInteractor.CallBack, TodaysDealInteractor.CallBack, FlashDealInteractor.CallBack, BestSellingInteractor.CallBack, BannerInteractor.CallBack, FeaturedProductInteractor.CallBack, BrandInteractor.CallBack, TopCategoryInteractor.CallBack, AuctionProductInteractor.CallBack, AuctionBidInteractor.CallBack {
     HomeView homeView;
 
 
@@ -107,96 +110,78 @@ public class HomePresenter extends AbstractPresenter implements TopSecondCategor
         new AuctionProductInteractorImpl(mExecutor, mMainThread, this).execute();
     }
 
-    public void getPreferCategories(){
-        new PreferCategoriesAllDataInteractorImp(mExecutor, mMainThread, this).execute();
-    }
+//    public void getPreferCategories(){
+//        new PreferCategoriesAllDataInteractorImp(mExecutor, mMainThread, this).execute();
+//    }
 
 //    public void getPreferCategoreisByIsShown(PreferCatModel preferCatModel){
 //        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel).execute();
 //    }
 
-    public void getCategoriesZerothProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 0).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-    public void getCategoriesFirstProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 1).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
+    public void getCategoriesZerothProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
     }
 
 
-    public void getCategoriesSecondProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 2).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
+    public void getCategoriesFirstProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 1).execute();
+    }
+
+    public void getCategoriesSecondProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 2).execute();
+    }
+
+    public void getCategoriesThirdProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 3).execute();
+    }
+
+    public void getCategoriesbFourthProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 4).execute();
+    }
+
+    public void getCategoriesFiveProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 5).execute();
+    }
+
+    public void getCategoriesSixHomesProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 6).execute();
+    }
+
+    public void getCategoriesSevenProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 7).execute();
+    }
+
+    public void getCategoriesEightFitnessProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 8).execute();
+    }
+
+    public void getCategoriesNighthProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 9).execute();
+    }
+
+    public void getCategoriesTenthProduct(String url){
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 10).execute();
     }
 
 
-    public void getCategoriesThirdProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 3).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
+    public void getCategoriesEleventhProduct(String url){
+        //new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 11).execute();
+        new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 11).execute();
     }
 
-
-    public void getCategoriesbFourthProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 4).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
+    public void getCategoriesTwelthProduct(String url){
+        //new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 12).execute();
+         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 12).execute();
     }
 
-
-    public void getCategoriesFiveProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 5).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
+    public void getCategoriesThirteenProduct(String url){
+        //new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 13).execute();
+         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 13).execute();
     }
 
-
-    public void getCategoriesSixHomesProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 6).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-
-    public void getCategoriesSevenProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 7).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-
-    public void getCategoriesEightFitnessProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 8).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-
-    public void getCategoriesNighthProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 9).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-
-    public void getCategoriesTenthProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 10).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-    public void getCategoriesEleventhProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 11).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-    public void getCategoriesTwelthProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 12).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-    public void getCategoriesThirteenProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 13).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
-    }
-
-    public void getCategoriesFourteenProduct(PreferCatModel preferCatModel){
-        new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 14).execute();
-        // new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 0).execute();
+    public void getCategoriesFourteenProduct(String url){
+        //new PreferCategoriesInteractorImpl(mExecutor, mMainThread, this, preferCatModel, 14).execute();
+         new ProductListingHomeInteractorImpl(mExecutor, mMainThread, this, url, 14).execute();
     }
 
 
@@ -349,92 +334,63 @@ public class HomePresenter extends AbstractPresenter implements TopSecondCategor
     }
 
     @Override
-    public void onProductDownloaded(ProductResponse productListingResponse) {
+    public void onProductDownloaded(ProductListingResponse productListingResponse) {
+
     }
 
     @Override
-    public void onProductZeroDownload(ProductResponse productListingResponse) {
+    public void onProductZeroDownload(ProductListingResponse productListingResponse) {
         homeView.setZerothProduct(productListingResponse);
     }
 
     @Override
-    public void onProductFirstDownloaded(ProductResponse productListingResponse) {
+    public void onProductFirstDownloaded(ProductListingResponse productListingResponse) {
         homeView.setFirstProduct(productListingResponse);
     }
 
     @Override
-    public void onProductSecondDownloaded(ProductResponse productListingResponse) {
+    public void onProductSecondDownloaded(ProductListingResponse productListingResponse) {
         homeView.setSecondProduct(productListingResponse);
     }
 
     @Override
-    public void onProductThirdDownloaded(ProductResponse productListingResponse) {
+    public void onProductThirdDownloaded(ProductListingResponse productListingResponse) {
         homeView.setThirdProduct(productListingResponse);
     }
 
     @Override
-    public void onProductFourthDownloaded(ProductResponse productListingResponse) {
+    public void onProductFourthDownloaded(ProductListingResponse productListingResponse) {
         homeView.setFourthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductFifthDownloaded(ProductResponse productListingResponse) {
+    public void onProductFifthDownloaded(ProductListingResponse productListingResponse) {
         homeView.setFifthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductSixthDownloaded(ProductResponse productListingResponse) {
+    public void onProductSixthDownloaded(ProductListingResponse productListingResponse) {
         homeView.setSixthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductSeventhDownloaded(ProductResponse productListingResponse) {
+    public void onProductSeventhDownloaded(ProductListingResponse productListingResponse) {
         homeView.setSeventhProduct(productListingResponse);
     }
 
     @Override
-    public void onProductEigthDownloaded(ProductResponse productListingResponse) {
+    public void onProductEigthDownloaded(ProductListingResponse productListingResponse) {
         homeView.setEighthProduct(productListingResponse);
     }
 
     @Override
-    public void onProductNinthDownloaded(ProductResponse productListingResponse) {
+    public void onProductNinthDownloaded(ProductListingResponse productListingResponse) {
         homeView.setNinthFitness(productListingResponse);
     }
 
     @Override
-    public void onProductTenthDownloaded(ProductResponse productListingResponse) {
+    public void onProductTenthDownloaded(ProductListingResponse productListingResponse) {
         homeView.setTenthProduct(productListingResponse);
-    }
-
-    @Override
-    public void onProductEleventhDownloaded(ProductResponse productListingResponse) {
-        homeView.setEleventhProduct(productListingResponse);
-    }
-
-    @Override
-    public void onProductTwelthDownloaded(ProductResponse productListingResponse) {
-        homeView.setTwelthProduct(productListingResponse);
-    }
-
-    @Override
-    public void onProductThirteenDownloaded(ProductResponse productListingResponse) {
-        homeView.setThirteenProduct(productListingResponse);
-    }
-
-    @Override
-    public void onProductFourteenDownloaded(ProductResponse productListingResponse) {
-        homeView.setFourteenProduct(productListingResponse);
-    }
-
-    @Override
-    public void onProductFifteenDownloaded(ProductResponse productListingResponse) {
-       // homeView.setFif(productListingResponse);
-    }
-
-    @Override
-    public void onProductDownloaded(List<Product> products) {
-
     }
 
     @Override
@@ -442,25 +398,6 @@ public class HomePresenter extends AbstractPresenter implements TopSecondCategor
 
     }
 
-    @Override
-    public void onPreferCaTDataArrived(PreferDataResponse preferDataResponse) {
-        homeView.getAllPreferData(preferDataResponse);
-    }
-
-    @Override
-    public void onPreferItemAddedError() {
-
-    }
-
-    @Override
-    public void onPreferCatIsShownArrived(ProductResponse preferDataResponse) {
-
-    }
-
-    @Override
-    public void onPreferCatItemAddedError() {
-
-    }
 
     @Override
     public void onTopSecondCategoriesDownloaded(List<Category> categories) {

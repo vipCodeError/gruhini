@@ -10,6 +10,7 @@ import com.syscription.firstchoicemart.Models.SliderImage;
 import com.syscription.firstchoicemart.Network.response.AppSettingsResponse;
 import com.syscription.firstchoicemart.Network.response.AuctionBidResponse;
 import com.syscription.firstchoicemart.Network.response.PreferDataResponse;
+import com.syscription.firstchoicemart.Network.response.ProductListingResponse;
 import com.syscription.firstchoicemart.Network.response.ProductResponse;
 
 import java.util.List;
@@ -39,35 +40,35 @@ public interface HomeView {
 
     void onAuctionBidSubmitted(AuctionBidResponse auctionBidResponse);
 
-    void setZerothProduct(ProductResponse productListingResponse);
+    void setZerothProduct(ProductListingResponse productListingResponse);
 
-    void setFirstProduct(ProductResponse productListingResponse);
+    void setFirstProduct(ProductListingResponse productListingResponse);
 
-    void setSecondProduct(ProductResponse productListingResponse);
+    void setSecondProduct(ProductListingResponse productListingResponse);
 
-    void setThirdProduct(ProductResponse productListingResponse);
+    void setThirdProduct(ProductListingResponse productListingResponse);
 
-    void setFourthProduct(ProductResponse productListingResponse);
+    void setFourthProduct(ProductListingResponse productListingResponse);
 
-    void setFifthProduct(ProductResponse productListingResponse);
+    void setFifthProduct(ProductListingResponse productListingResponse);
 
-    void setSixthProduct(ProductResponse productListingResponse);
+    void setSixthProduct(ProductListingResponse productListingResponse);
 
-    void setSeventhProduct(ProductResponse productListingResponse);
+    void setSeventhProduct(ProductListingResponse productListingResponse);
 
-    void setEighthProduct(ProductResponse productListingResponse);
+    void setEighthProduct(ProductListingResponse productListingResponse);
 
-    void setNinthFitness(ProductResponse productListingResponse);
+    void setNinthFitness(ProductListingResponse productListingResponse);
 
-    void setTenthProduct(ProductResponse productListingResponse);
+    void setTenthProduct(ProductListingResponse productListingResponse);
 
-    void setEleventhProduct(ProductResponse productListingResponse);
+    void setEleventhProduct(ProductListingResponse productListingResponse);
 
-    void setTwelthProduct(ProductResponse productListingResponse);
+    void setTwelthProduct(ProductListingResponse productListingResponse);
 
-    void setThirteenProduct(ProductResponse productListingResponse);
+    void setThirteenProduct(ProductListingResponse productListingResponse);
 
-    void setFourteenProduct(ProductResponse productListingResponse);
+    void setFourteenProduct(ProductListingResponse productListingResponse);
 
     void getAllPreferData(PreferDataResponse preferDataResponse);
 
